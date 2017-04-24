@@ -5,8 +5,8 @@ import Header from './Header';
 function MainLayout({ children }) {
   return (
     <div className={styles.normal}>
-    <Header />
-    <div className={styles.content}>
+      <Header />
+      <div className={styles.content}>
         <div className={styles.main}>
           {children}
         </div>
