@@ -23,7 +23,7 @@ export default {
 
     querySuccess(state) {
       const result = laundriesService.fetch();
-      return {...state, ...result};
+      return { ...state, ...result };
     },
   },
   // effects: {
@@ -36,7 +36,6 @@ export default {
   subscriptions: {
     setup({ dispatch, history }) {
       return history.listen(({ pathname, query }) => {
-        console.log("listening..." + pathname);
         if (pathname === '/laundryList') {
           dispatch({ type: 'querySuccess', payload: query });
         }

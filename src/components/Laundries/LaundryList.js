@@ -6,7 +6,7 @@ import styles from './LaundryList.css';
 const Item = List.Item;
 const Brief = Item.Brief;
 
-function LaundryList({list: dataSource, total}) {
+function LaundryList({ list: dataSource, total }) {
   console.log('in component...');
   console.log(dataSource);
   console.log(total);
@@ -44,8 +44,8 @@ function LaundryList({list: dataSource, total}) {
 
 function mapStateToProps(state) {
   const { list, total } = state.laundries;
-  console.log("fefefe  fdsfdsfsfds");
-  return {list, total};
+  console.log('fefefe  fdsfdsfsfds');
+  return { list, total };
 }
 
 export default connect(mapStateToProps)(LaundryList);
