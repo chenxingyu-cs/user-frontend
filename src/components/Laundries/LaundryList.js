@@ -6,7 +6,10 @@ import styles from './LaundryList.css';
 const Item = List.Item;
 const Brief = Item.Brief;
 
-function LaundryList() {
+function LaundryList({list: dataSource, total}) {
+  console.log('in component...');
+  console.log(dataSource);
+  console.log(total);
   return (
     <div className={styles.normal}>
       <List renderHeader={() => '你附近的洗衣店有：'} className="my-list">
@@ -40,10 +43,9 @@ function LaundryList() {
 }
 
 function mapStateToProps(state) {
-  const { list } = state.laundries;
-  return {
-    list,
-  };
+  const { list, total } = state.laundries;
+  console.log("fefefe  fdsfdsfsfds");
+  return {list, total};
 }
 
 export default connect(mapStateToProps)(LaundryList);
