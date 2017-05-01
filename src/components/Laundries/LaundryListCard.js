@@ -6,8 +6,6 @@ import styles from './LaundryListCard.css';
 const Item = List.Item;
 const Brief = Item.Brief;
 
-
-
 function LaundryListCard(laundry) {
 
   function handleClick(id) {

@@ -5,14 +5,13 @@ import styles from './LaundryList.css';
 import LaundryListCard from './LaundryListCard';
 
 const Item = List.Item;
-const Brief = Item.Brief;
 
 function LaundryList({ list: dataSource, total }) {
   console.log('in component...');
   console.log(dataSource);
   console.log(total);
-  let itemList = []
-  for (let i = 0; i < dataSource.length; i++) {
+  const itemList = [];
+  for (let i = 0; i < dataSource.length; i+=1) {
     const tmp = dataSource[i];
     itemList.push(<LaundryListCard laundry={tmp}/>);
   }
