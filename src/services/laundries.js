@@ -62,3 +62,54 @@ export function fetch() {
   };
   return getResult;
 }
+
+export function fetchMachinesByLaundryId(id) {
+  const getResult = {
+    total: 6,
+    list: [
+      {
+        id: 1,
+        name: '洗衣机 A',
+        price: 5.00,
+        timeNeeded: 30,
+        isFree: true,
+      },
+      {
+        id: 2,
+        name: '洗衣机 B',
+        price: 5.00,
+        timeNeeded: 30,
+        isFree: true,
+      },
+      {
+        id: 3,
+        name: '洗衣机 C',
+        price: 5.00,
+        timeNeeded: 30,
+        isFree: true,
+      },
+      {
+        id: 4,
+        name: '洗衣机 D',
+        price: 5.00,
+        timeNeeded: 30,
+        isFree: true,
+      },
+      {
+        id: 5,
+        name: '洗衣机 E',
+        price: 5.00,
+        timeNeeded: 30,
+        isFree: true,
+      },
+      {
+        id: 6,
+        name: '洗衣机 F',
+        price: 5.00,
+        timeNeeded: 30,
+        isFree: true,
+      },
+    ],
+  };
+  return getResult;
+}

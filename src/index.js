@@ -10,6 +10,8 @@ const app = dva();
 // 3. Model
 app.model(require('./models/example'));
 
+app.model(require("./models/machines"));
+
 app.model(require('./models/laundries'));
 
 // 4. Router
