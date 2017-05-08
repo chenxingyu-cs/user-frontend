@@ -1,0 +1,19 @@
+
+.normal {
+
+
+
+
+  .am-grid {
+    border: 1px solid #ddd;
+  }
+}
+
+.am-grid {
+  border: 1px solid #ddd;
+}
+
+.currentFunctionIntro {
+  border: 1px solid #ddd;
+  /*height: 64px;*/
+}

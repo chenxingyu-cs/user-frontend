@@ -113,3 +113,43 @@ export function fetchMachinesByLaundryId(id) {
   };
   return getResult;
 }
+
+export function getMachineDetail(id) {
+  const getResult = {
+    machineIntro: {
+      text: "速比坤10.5公斤搅拌式洗衣机",
+      img: 'http://gfs3.gomein.net.cn/T1WkdTBmCv1RCvBVdK',
+    },
+    machineFunctions: [
+      {
+        id: 1,
+        name: "Function 1",
+        price: 1.00,
+        intro: "This is the intro of function 1",
+        img: 'https://zos.alipayobjects.com/rmsportal/wIjMDnsrDoPPcIV.png',
+      },
+      {
+        id: 2,
+        name: "Function 2",
+        price: 2.00,
+        intro: "This is the intro of function 2",
+        img: 'https://zos.alipayobjects.com/rmsportal/wIjMDnsrDoPPcIV.png',
+      },
+      {
+        id: 3,
+        name: "Function 3",
+        price: 3.00,
+        intro: "This is the intro of function 3",
+        img: 'https://zos.alipayobjects.com/rmsportal/wIjMDnsrDoPPcIV.png',
+      },
+      {
+        id: 4,
+        name: "Function 4",
+        price: 4.00,
+        intro: "This is the intro of function 4",
+        img: 'https://zos.alipayobjects.com/rmsportal/wIjMDnsrDoPPcIV.png',
+      },
+    ],
+  };
+  return getResult;
+}
