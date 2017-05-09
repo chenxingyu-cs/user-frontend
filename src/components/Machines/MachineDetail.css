@@ -1,19 +1,20 @@
 
 .normal {
 
-
-
-
-  .am-grid {
-    border: 1px solid #ddd;
-  }
-}
-
-.am-grid {
-  border: 1px solid #ddd;
 }
 
 .currentFunctionIntro {
+  border: 1px solid black;
+  text-align: center;
+  padding: 10px 0;
+  margin: 20px 0;
+}
+
+.machineFunctionDiv {
   border: 1px solid #ddd;
-  /*height: 64px;*/
+}
+
+.singleFunction {
+  margin: 45px 0;
+  /*border-left: 1px solid black;*/
 }

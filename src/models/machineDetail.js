@@ -22,7 +22,6 @@ export default {
     },
 
     setCurrentFunctionIntro(state, { payload: index }) {
-
       let { machineIntro, machineFunctions, currentFunctionIntro } = state;
       currentFunctionIntro = state.machineFunctions[index].intro;
       return {...state,  machineIntro, machineFunctions, currentFunctionIntro};

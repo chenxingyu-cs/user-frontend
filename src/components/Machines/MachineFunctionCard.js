@@ -1,10 +1,14 @@
 import React from 'react';
 import styles from './MachineFunctionCard.css';
 
-function MachineFunctionCard() {
+function MachineFunctionCard({machineFunction}) {
+  console.log(machineFunction);
   return (
     <div className={styles.normal}>
-      Component: MachineFunctionCard
+      <img src={machineFunction.img} className={styles.functionImg}/>
+      <div>
+        <span>{machineFunction.name}</span>
+      </div>
     </div>
   );
 }
