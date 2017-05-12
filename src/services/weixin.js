@@ -1,5 +1,5 @@
-var nodeWeixinPay = require('node-weixin-pay');
-var nodeWeixinConfig = require('node-weixin-config');
+// var nodeWeixinPay = require('node-weixin-pay');
+// var nodeWeixinConfig = require('node-weixin-config');
 
 // // 必须
 // var merchant = {

@@ -4,16 +4,11 @@ import { List } from 'antd-mobile';
 import styles from './LaundryList.css';
 import LaundryListCard from './LaundryListCard';
 
-const Item = List.Item;
-
-function LaundryList({ list: dataSource, total }) {
-  console.log('in component...');
-  console.log(dataSource);
-  console.log(total);
+function LaundryList({ list: dataSource }) {
   const itemList = [];
-  for (let i = 0; i < dataSource.length; i+=1) {
+  for (let i = 0; i < dataSource.length; i += 1) {
     const tmp = dataSource[i];
-    itemList.push(<LaundryListCard laundry={tmp}/>);
+    itemList.push(<LaundryListCard laundry={tmp} />);
   }
   return (
     <div className={styles.normal}>
@@ -26,7 +21,6 @@ function LaundryList({ list: dataSource, total }) {
 
 function mapStateToProps(state) {
   const { list, total } = state.laundries;
-  console.log('fefefe  fdsfdsfsfds');
   return { list, total };
 }
 

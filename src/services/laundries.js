@@ -117,36 +117,36 @@ export function fetchMachinesByLaundryId(id) {
 export function getMachineDetail(id) {
   const getResult = {
     machineIntro: {
-      text: "速比坤10.5公斤搅拌式洗衣机",
+      text: '速比坤10.5公斤搅拌式洗衣机',
       img: 'http://gfs3.gomein.net.cn/T1WkdTBmCv1RCvBVdK',
     },
     machineFunctions: [
       {
         id: 1,
-        name: "桶自洁",
+        name: '桶自洁',
         price: 1.00,
-        intro: "洗衣前自动清洁内桶，所需时间2分钟，0元",
+        intro: '洗衣前自动清洁内桶，所需时间2分钟，0元',
         img: 'https://www.shareicon.net/data/2017/02/07/878493_front_512x512.png',
       },
       {
         id: 2,
-        name: "标准洗",
+        name: '标准洗',
         price: 2.00,
-        intro: "标准洗，所需时间20分钟，5元",
+        intro: '标准洗，所需时间20分钟，5元',
         img: 'https://www.shareicon.net/data/2017/02/07/878493_front_512x512.png',
       },
       {
         id: 3,
-        name: "单脱水",
+        name: '单脱水',
         price: 3.00,
-        intro: "单脱水，所需时间10分钟，5元",
+        intro: '单脱水，所需时间10分钟，5元',
         img: 'https://www.shareicon.net/data/2017/02/07/878493_front_512x512.png',
       },
       {
         id: 4,
-        name: "加强洗",
+        name: '加强洗',
         price: 4.00,
-        intro: "加强洗，所需时间20分钟，10元",
+        intro: '加强洗，所需时间20分钟，10元',
         img: 'https://www.shareicon.net/data/2017/02/07/878493_front_512x512.png',
       },
     ],

@@ -4,9 +4,9 @@ import IndexPage from './routes/IndexPage';
 
 import LaundryList from './routes/LaundryList.js';
 
-import LaundryPoint from "./routes/LaundryPoint.js";
+import LaundryPoint from './routes/LaundryPoint.js';
 
-import LaundryMachine from "./routes/LaundryMachine.js";
+import LaundryMachine from './routes/LaundryMachine.js';
 
 function RouterConfig({ history }) {
   return (

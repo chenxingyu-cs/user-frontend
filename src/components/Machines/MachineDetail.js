@@ -1,14 +1,12 @@
 import React from 'react';
 import { connect } from 'dva';
-import styles from './MachineDetail.css';
 import { Grid, Flex, WhiteSpace, Button } from 'antd-mobile';
-import { routerRedux } from 'dva/router';
+import styles from './MachineDetail.css';
 import MachineIntroductionCard from './MachineIntroductionCard';
-import MachineFunctionCard from './MachineFunctionCard';
+// import MachineFunctionCard from './MachineFunctionCard';
 
 
 function MachineDetail({ dispatch, machineIntro, machineFunctions, currentFunctionIntro }) {
-
   function changeFunctionIntroAccordingToIndex(index) {
     dispatch({
       type: 'machineDetail/setCurrentFunctionIntro',
@@ -24,10 +22,15 @@ function MachineDetail({ dispatch, machineIntro, machineFunctions, currentFuncti
       <div className={styles.currentFunctionIntro}>
         {currentFunctionIntro}
       </div>
-      <Grid data={machineFunctions} className={styles.machineFunctionDiv} columnNum={4} hasLine={true} onClick={(_el, index) => changeFunctionIntroAccordingToIndex(index)}
-        renderItem={(dataItem, index) => (
+      <Grid
+        data={machineFunctions}
+        className={styles.machineFunctionDiv}
+        columnNum={2}
+        hasLine={true}
+        onClick={(_el, index) => changeFunctionIntroAccordingToIndex(index)}
+        renderItem={(dataItem) => (
           <div className={styles.singleFunction}>
-            <img src={dataItem.img} style={{ width: '40%'}} />
+            <img src={dataItem.img} role="presentation" style={{ width: '40%' }} />
             <div>
               <span>{dataItem.name}</span>
             </div>

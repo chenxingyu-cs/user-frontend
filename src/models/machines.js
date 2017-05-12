@@ -1,5 +1,5 @@
-import * as laundriesService from '../services/laundries';
 import pathToRegexp from 'path-to-regexp';
+import * as laundriesService from '../services/laundries';
 
 export default {
   namespace: 'machines',

@@ -7,27 +7,27 @@ const Item = List.Item;
 const Brief = Item.Brief;
 
 function LaundryListCard(laundry) {
-
   function handleClick(id) {
-    window.location = '/#/laundryPoint/'+id;
+    window.location = '/#/laundryPoint/' + id;
   }
 
-  console.log(laundry.laundry);
-  const { id, name, distance, total, washerNum, dryerNum, free } = laundry.laundry;
-  console.log(name);
+  const { id, name, distance, washerNum, dryerNum } = laundry.laundry;
+
   return (
-    <Item
-      key={id}
-      wrap="true"
-      extra={distance}
-      align="top"
-      onClick={()=>{handleClick(id);}}
-      thumb="https://zos.alipayobjects.com/rmsportal/dNuvNrtqUztHCwM.png"
-      multipleLine
-    >
-      {name}
-      <Brief wrap="true">洗衣{washerNum}台 烘干{dryerNum}台</Brief>
-    </Item>
+    <div className={styles.normal}>
+      <Item
+        key={id}
+        wrap="true"
+        extra={distance}
+        align="top"
+        onClick={() => { handleClick(id); }}
+        thumb="https://zos.alipayobjects.com/rmsportal/dNuvNrtqUztHCwM.png"
+        multipleLine
+      >
+        {name}
+        <Brief wrap="true">洗衣{washerNum}台 烘干{dryerNum}台</Brief>
+      </Item>
+    </div>
   );
 }
 

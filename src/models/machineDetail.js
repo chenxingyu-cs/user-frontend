@@ -1,12 +1,12 @@
-import * as laundriesService from '../services/laundries';
 import pathToRegexp from 'path-to-regexp';
+import * as laundriesService from '../services/laundries';
 
 export default {
   namespace: 'machineDetail',
   state: {
     machineIntro: {},
     machineFunctions: [],
-    currentFunctionIntro: "",
+    currentFunctionIntro: '',
   },
   reducers: {
     // save(state, { payload: { data: list, total } }) {
@@ -24,7 +24,7 @@ export default {
     setCurrentFunctionIntro(state, { payload: index }) {
       let { machineIntro, machineFunctions, currentFunctionIntro } = state;
       currentFunctionIntro = state.machineFunctions[index].intro;
-      return {...state,  machineIntro, machineFunctions, currentFunctionIntro};
+      return { ...state, machineIntro, machineFunctions, currentFunctionIntro };
     },
   },
   // effects: {

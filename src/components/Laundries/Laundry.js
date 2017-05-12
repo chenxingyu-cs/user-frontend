@@ -4,16 +4,11 @@ import { List } from 'antd-mobile';
 import styles from './Laundry.css';
 import LaundryPointCard from './LaundryPointCard';
 
-const Item = List.Item;
-
-function Laundry({ list: dataSource, total }) {
-  console.log('in component...');
-  console.log(dataSource);
-  console.log(total);
+function Laundry({ list: dataSource }) {
   const itemList = [];
-  for (let i = 0; i < dataSource.length; i+=1) {
+  for (let i = 0; i < dataSource.length; i += 1) {
     const tmp = dataSource[i];
-    itemList.push(<LaundryPointCard machine={tmp}/>);
+    itemList.push(<LaundryPointCard machine={tmp} />);
   }
   return (
     <div className={styles.normal}>
