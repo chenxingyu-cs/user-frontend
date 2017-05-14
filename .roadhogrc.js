@@ -26,7 +26,7 @@ export default {
   },
   "proxy": {
     "/api": {
-      "target": "http://ec2-54-91-84-179.compute-1.amazonaws.com/",
+      "target": "http://wxgzhpaytest.maxtropy.com:8001/",
       "changeOrigin": true,
       "pathRewrite": { "^/api" : "" }
     }
