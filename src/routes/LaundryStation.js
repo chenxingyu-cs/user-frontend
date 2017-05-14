@@ -1,10 +1,10 @@
 import React from 'react';
 import { connect } from 'dva';
-import styles from './LaundryPoint.css';
-import LaundryDetailComponent from '../components/Laundries/Laundry';
+import styles from './LaundryStation.css';
+import LaundryDetailComponent from '../components/Laundries/LaundryStation';
 import MainLayout from '../components/MainLayout/MainLayout';
 
-function LaundryPoint() {
+function LaundryStation() {
   return (
     <MainLayout>
       <div className={styles.normal}>
@@ -18,4 +18,4 @@ function mapStateToProps() {
   return {};
 }
 
-export default connect(mapStateToProps)(LaundryPoint);
+export default connect(mapStateToProps)(LaundryStation);

@@ -8,7 +8,7 @@ const Brief = Item.Brief;
 
 function LaundryListCard(laundry) {
   function handleClick(id) {
-    window.location = '/#/laundryPoint/' + id;
+    window.location = '/#/laundryStation/' + id;
   }
 
   const { id, name, distance, washerNum, dryerNum } = laundry.laundry;
