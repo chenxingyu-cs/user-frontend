@@ -1,12 +1,12 @@
 import React from 'react';
 import { List } from 'antd-mobile';
-import styles from './LaundryPointCard.css';
+import styles from './LaundryStationCard.css';
 
 
 const Item = List.Item;
 const Brief = Item.Brief;
 
-function LaundryPointCard(machine) {
+function LaundryStationCard(machine) {
   const { id, name, price, timeNeeded, isFree } = machine.machine;
   const machineState = isFree ? '空闲' : '使用中';
   return (
@@ -19,4 +19,4 @@ function LaundryPointCard(machine) {
   );
 }
 
-export default LaundryPointCard;
+export default LaundryStationCard;

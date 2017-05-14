@@ -2,13 +2,13 @@ import React from 'react';
 import { connect } from 'dva';
 import { List } from 'antd-mobile';
 import styles from './LaundryStation.css';
-import LaundryPointCard from './LaundryPointCard';
+import LaundryStationCard from './LaundryStationCard';
 
 function LaundryStation({ list: dataSource }) {
   const itemList = [];
   for (let i = 0; i < dataSource.length; i += 1) {
     const tmp = dataSource[i];
-    itemList.push(<LaundryPointCard machine={tmp} />);
+    itemList.push(<LaundryStationCard machine={tmp} />);
   }
   return (
     <div className={styles.normal}>
