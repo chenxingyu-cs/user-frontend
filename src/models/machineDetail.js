@@ -37,7 +37,7 @@ export default {
   subscriptions: {
     setup({ dispatch, history }) {
       return history.listen(({ pathname, query }) => {
-        const match = pathToRegexp('/laundryMachine/:machineId').exec(pathname);
+        const match = pathToRegexp('/laundry/machine/:machineId').exec(pathname);
         if (match) {
           const machineId = match[1];
           dispatch({ type: 'querySuccess', payload: query });

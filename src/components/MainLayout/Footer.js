@@ -55,7 +55,7 @@ class Footer extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      selectedTab: 'redTab',
+      selectedTabIndex: props.tabBarIndex? props.tabBarIndex : 0,
       hidden: false,
     };
   }
@@ -90,13 +90,12 @@ class Footer extends React.Component {
           key="生活"
           icon={{ uri: 'https://zos.alipayobjects.com/rmsportal/sifuoDUQdAFKAVcFGROC.svg' }}
           selectedIcon={{ uri: 'https://zos.alipayobjects.com/rmsportal/iSrlOTqrKddqbOmlvUfq.svg' }}
-          selected={this.state.selectedTab === 'blueTab'}
-          badge={1}
+          selected={this.state.selectedTabIndex === 0}
           onPress={() => {
-            this.setState({
-              selectedTab: 'blueTab',
-            });
-            window.location = '/#/laundryMachine/10';
+            // this.setState({
+            //   selectedTab: 'blueTab',
+            // });
+            window.location = '/#/laundry/list';
           }}
           data-seed="logId"
         >
@@ -106,13 +105,12 @@ class Footer extends React.Component {
           selectedIcon={<Icon type="koubei" size="md" />}
           title="口碑"
           key="口碑"
-          badge={'new'}
-          selected={this.state.selectedTab === 'redTab'}
+          selected={this.state.selectedTabIndex === 1}
           onPress={() => {
-            this.setState({
-              selectedTab: 'redTab',
-            });
-            window.location = '/#/laundryStation/10';
+            // this.setState({
+            //   selectedTab: 'redTab',
+            // });
+            window.location = '/#/laundry/station/10';
           }}
           data-seed="logId1"
         >
@@ -122,12 +120,11 @@ class Footer extends React.Component {
           selectedIcon={{ uri: 'https://zos.alipayobjects.com/rmsportal/IIRLrXXrFAhXVdhMWgUI.svg' }}
           title="朋友"
           key="朋友"
-          dot
-          selected={this.state.selectedTab === 'greenTab'}
+          selected={this.state.selectedTabIndex === 2}
           onPress={() => {
-            this.setState({
-              selectedTab: 'greenTab',
-            });
+            // this.setState({
+            //   selectedTab: 'greenTab',
+            // });
           }}
         >
         </TabBar.Item>
@@ -136,11 +133,11 @@ class Footer extends React.Component {
           selectedIcon={{ uri: 'https://zos.alipayobjects.com/rmsportal/gjpzzcrPMkhfEqgbYvmN.svg' }}
           title="我的"
           key="我的"
-          selected={this.state.selectedTab === 'yellowTab'}
+          selected={this.state.selectedTabIndex === 3}
           onPress={() => {
-            this.setState({
-              selectedTab: 'yellowTab',
-            });
+            // this.setState({
+            //   selectedTab: 'yellowTab',
+            // });
           }}
         >
         </TabBar.Item>

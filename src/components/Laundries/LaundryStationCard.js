@@ -9,7 +9,7 @@ const Brief = Item.Brief;
 function LaundryStationCard(machine) {
 
   function handleClick(id) {
-    window.location = '/#/laundryMachine/' + id;
+    window.location = '/#/laundry/machine/' + id;
   }
 
   const { id, description, status, functions } = machine.machine;

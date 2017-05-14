@@ -3,7 +3,7 @@ import styles from './MainLayout.css';
 import Header from './Header';
 import Footer from './Footer';
 
-function MainLayout({ children }) {
+function MainLayout({ children, tabBarIndex }) {
   return (
     <div className={styles.normal}>
       <Header />
@@ -12,7 +12,7 @@ function MainLayout({ children }) {
           {children}
         </div>
       </div>
-      <Footer />
+      <Footer tabBarIndex={tabBarIndex}/>
     </div>
   );
 }
