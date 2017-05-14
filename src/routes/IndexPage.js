@@ -1,6 +1,8 @@
 import React from 'react';
 import { connect } from 'dva';
+import { Link } from 'dva/router';
 import styles from './IndexPage.css';
+import { Icon } from 'antd-mobile';
 import MainLayout from '../components/MainLayout/MainLayout';
 
 function IndexPage() {
@@ -8,11 +10,10 @@ function IndexPage() {
     <MainLayout>
       <div className={styles.normal}>
         <h1 className={styles.title}>Yay! Welcome to dva!</h1>
-        <div className={styles.welcome} />
-        <ul className={styles.list}>
-          <li>To get started, edit <code>src/index.js</code> and save to reload.</li>
-          <li><a href="https://github.com/dvajs/dva-docs/blob/master/v1/en-us/getting-started.md">Getting Started</a></li>
-        </ul>
+
+        <Link to="/laundryList"><Icon type="bars" />List</Link>
+        <Link to="/laundryStation/10"><Icon type="bars" />Station</Link>
+        <Link to="/laundryMachine/1"><Icon type="bars" />Machine</Link>
       </div>
     </MainLayout>
   );
