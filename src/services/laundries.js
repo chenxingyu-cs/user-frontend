@@ -64,52 +64,183 @@ export function fetch() {
 }
 
 export function fetchMachinesByLaundryId(id) {
+  // const getResult = {
+  //   total: 6,
+  //   list: [
+  //     {
+  //       id: 1,
+  //       name: '洗衣机 A',
+  //       price: 5.00,
+  //       timeNeeded: 30,
+  //       isFree: true,
+  //     },
+  //     {
+  //       id: 2,
+  //       name: '洗衣机 B',
+  //       price: 5.00,
+  //       timeNeeded: 30,
+  //       isFree: true,
+  //     },
+  //     {
+  //       id: 3,
+  //       name: '洗衣机 C',
+  //       price: 5.00,
+  //       timeNeeded: 30,
+  //       isFree: true,
+  //     },
+  //     {
+  //       id: 4,
+  //       name: '洗衣机 D',
+  //       price: 5.00,
+  //       timeNeeded: 30,
+  //       isFree: true,
+  //     },
+  //     {
+  //       id: 5,
+  //       name: '洗衣机 E',
+  //       price: 5.00,
+  //       timeNeeded: 30,
+  //       isFree: true,
+  //     },
+  //     {
+  //       id: 6,
+  //       name: '洗衣机 F',
+  //       price: 5.00,
+  //       timeNeeded: 30,
+  //       isFree: true,
+  //     },
+  //   ],
+  // };
   const getResult = {
-    total: 6,
-    list: [
+    id: 10,
+    name: "北京航空航天大学海淀校区洗衣房",
+    location: "北京",
+    machines: [
       {
         id: 1,
-        name: '洗衣机 A',
-        price: 5.00,
-        timeNeeded: 30,
-        isFree: true,
+        modelName: "SBK001",
+        functions: [
+          {
+            id: 1,
+            name: "标准洗",
+            price: 5,
+            time: 30,
+            description: "洗衣前自动清洁内筒, 所需时间30分钟 5.0元"
+          },
+          {
+            id: 7,
+            name: "强力洗",
+            price: 4,
+            time: 20,
+            description: "滚筒混合洗, 所需时间20分钟 4.0元"
+          }
+        ],
+        status: "空闲",
+        description: "速比坤洗衣机001",
+        imageSrc: "/folder/washer.jpg"
       },
       {
         id: 2,
-        name: '洗衣机 B',
-        price: 5.00,
-        timeNeeded: 30,
-        isFree: true,
+        modelName: "SBK001",
+        functions: [
+          {
+            id: 2,
+            name: "脱水洗",
+            price: 6,
+            time: 10,
+            description: "洗衣后脱水处理, 所需时间10分钟 6.0元"
+          },
+          {
+            id: 8,
+            name: "瞎几把洗",
+            price: 12,
+            time: 40,
+            description: "动力轻柔, 所需时间40分钟 12.0元"
+          }
+        ],
+        status: "故障",
+        description: "速比坤洗衣机002",
+        imageSrc: "/folder/washer.jpg"
       },
       {
         id: 3,
-        name: '洗衣机 C',
-        price: 5.00,
-        timeNeeded: 30,
-        isFree: true,
+        modelName: "SBK001",
+        functions: [
+          {
+            id: 3,
+            name: "标准洗",
+            price: 5,
+            time: 30,
+            description: "洗衣前自动清洁内筒, 所需时间30分钟 5.0元"
+          },
+          {
+            id: 9,
+            name: "强力洗",
+            price: 4,
+            time: 20,
+            description: "滚筒混合洗, 所需时间20分钟 4.0元"
+          },
+          {
+            id: 10,
+            name: "瞎几把洗",
+            price: 12,
+            time: 40,
+            description: "动力轻柔, 所需时间40分钟 12.0元"
+          }
+        ],
+        status: "空闲",
+        description: "速比坤洗衣机003",
+        imageSrc: "/folder/washer.jpg"
       },
       {
         id: 4,
-        name: '洗衣机 D',
-        price: 5.00,
-        timeNeeded: 30,
-        isFree: true,
+        modelName: "HGJ001",
+        functions: [
+          {
+            id: 4,
+            name: "标准烘干",
+            price: 4,
+            time: 20,
+            description: "适用于涤纶纯棉衣物烘干, 所需时间20分钟 4.0元"
+          }
+        ],
+        status: "空闲",
+        description: "速比坤烘干机001",
+        imageSrc: "/folder/washer.jpg"
       },
       {
         id: 5,
-        name: '洗衣机 E',
-        price: 5.00,
-        timeNeeded: 30,
-        isFree: true,
+        modelName: "HGJ001",
+        functions: [
+          {
+            id: 5,
+            name: "标准烘干",
+            price: 4,
+            time: 20,
+            description: "适用于涤纶纯棉衣物烘干, 所需时间20分钟 4.0元"
+          }
+        ],
+        status: "掉线",
+        description: "速比坤烘干机002",
+        imageSrc: "/folder/washer.jpg"
       },
       {
         id: 6,
-        name: '洗衣机 F',
-        price: 5.00,
-        timeNeeded: 30,
-        isFree: true,
-      },
-    ],
+        modelName: "HGJ001",
+        functions: [
+          {
+            id: 6,
+            name: "标准烘干",
+            price: 4,
+            time: 20,
+            description: "适用于涤纶纯棉衣物烘干, 所需时间20分钟 4.0元"
+          }
+        ],
+        status: "使用中",
+        description: "速比坤烘干机003",
+        imageSrc: "/folder/washer.jpg"
+      }
+    ]
   };
   return getResult;
 }

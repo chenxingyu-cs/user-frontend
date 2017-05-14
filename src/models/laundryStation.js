@@ -1,11 +1,13 @@
 import pathToRegexp from 'path-to-regexp';
-import * as laundriesService from '../services/laundries';
+import * as stationService from '../services/station';
 
 export default {
   namespace: 'laundryStation',
   state: {
-    list: [],
-    total: 0,
+    id: 0,
+    location: '',
+    name: '',
+    machines: [],
   },
   reducers: {
     // save(state, { payload: { data: list, total } }) {
@@ -16,7 +18,20 @@ export default {
 
     querySuccess(state) {
       const result = laundriesService.fetchMachinesByLaundryId(1);
+      console.log(result)
       return { ...state, ...result };
+    },
+
+    save(state, { payload: { data } }) {
+      console.log(data);
+      return { ...state, ...data };
+    }
+  },
+  effects: {
+    *fetch({ payload: { id } }, { call, put }) {
+      console.log(id);
+      const { data } = yield call(stationService.fetchStationByStationId, { id });
+      yield put({ type: 'save', payload: { data } });
     },
   },
   // effects: {
@@ -32,7 +47,8 @@ export default {
         const match = pathToRegexp('/laundryStation/:laundryId').exec(pathname);
         if (match) {
           const laundryId = match[1];
-          dispatch({ type: 'querySuccess', payload: query });
+          // dispatch({ type: 'querySuccess', payload: query });
+          dispatch({ type: 'fetch', payload: {id: laundryId} });
         }
         // if (pathname === '/laundryPoint') {
         //   dispatch({ type: 'querySuccess', payload: query });

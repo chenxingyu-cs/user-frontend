@@ -11,13 +11,6 @@ export default {
     'transform-runtime',
     ['import', { libraryName: 'antd-mobile', style: 'css' }],
   ],
-  theme: {
-    "@primary-color": "#1DA57A",
-    "@link-color": "#1DA57A",
-    "@border-radius-base": "2px",
-    "@font-size-base": "16px",
-    "@line-height-base": "1.2"
-  },
   env: {
     development: {
       extraBabelPlugins: [
@@ -33,7 +26,7 @@ export default {
   },
   "proxy": {
     "/api": {
-      "target": "http://192.168.3.49:8000/",
+      "target": "http://ec2-54-91-84-179.compute-1.amazonaws.com/",
       "changeOrigin": true,
       "pathRewrite": { "^/api" : "" }
     }

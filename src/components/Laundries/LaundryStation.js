@@ -4,7 +4,7 @@ import { List } from 'antd-mobile';
 import styles from './LaundryStation.css';
 import LaundryStationCard from './LaundryStationCard';
 
-function LaundryStation({ list: dataSource }) {
+function LaundryStation({ machines: dataSource, name }) {
   const itemList = [];
   for (let i = 0; i < dataSource.length; i += 1) {
     const tmp = dataSource[i];
@@ -12,7 +12,7 @@ function LaundryStation({ list: dataSource }) {
   }
   return (
     <div className={styles.normal}>
-      <List renderHeader={() => '洗衣店'} className="my-list">
+      <List renderHeader={() => name} className="my-list">
         {itemList}
       </List>
     </div>
@@ -20,8 +20,8 @@ function LaundryStation({ list: dataSource }) {
 }
 
 function mapStateToProps(state) {
-  const { list, total } = state.laundryStation;
-  return { list, total };
+  const { name, machines, id } = state.laundryStation;
+  return { name, machines, id };
 }
 
 export default connect(mapStateToProps)(LaundryStation);
