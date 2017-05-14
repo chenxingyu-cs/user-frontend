@@ -12,7 +12,7 @@ app.model(require('./models/example'));
 
 app.model(require('./models/machineDetail'));
 
-app.model(require('./models/machines'));
+app.model(require('./models/laundryStation'));
 
 app.model(require('./models/laundries'));
 

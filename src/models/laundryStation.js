@@ -2,7 +2,7 @@ import pathToRegexp from 'path-to-regexp';
 import * as laundriesService from '../services/laundries';
 
 export default {
-  namespace: 'machines',
+  namespace: 'laundryStation',
   state: {
     list: [],
     total: 0,

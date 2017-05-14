@@ -20,7 +20,7 @@ function LaundryStation({ list: dataSource }) {
 }
 
 function mapStateToProps(state) {
-  const { list, total } = state.machines;
+  const { list, total } = state.laundryStation;
   return { list, total };
 }
 
