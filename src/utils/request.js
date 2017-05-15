@@ -14,6 +14,10 @@ function checkStatus(response) {
   throw error;
 }
 
+// function returnStatus(response) {
+//   return (response.status >= 200 && response.status < 300);
+// }
+
 /**
  * Requests a URL, returning a promise.
  *
@@ -28,3 +32,8 @@ export default function request(url, options) {
     .then(data => ({ data }))
     .catch(err => ({ err }));
 }
+
+// export function requestStatus(url, options) {
+//   return fetch(url, options)
+//     .then(returnStatus);
+// }

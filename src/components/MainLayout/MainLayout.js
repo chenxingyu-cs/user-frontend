@@ -6,7 +6,6 @@ import Footer from './Footer';
 function MainLayout({ children, tabBarIndex, title }) {
   return (
     <div className={styles.normal}>
-      <Header title={title}/>
       <div className={styles.content}>
         <div className={styles.main}>
           {children}

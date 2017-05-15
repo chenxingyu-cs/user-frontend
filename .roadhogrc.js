@@ -26,7 +26,7 @@ export default {
   },
   "proxy": {
     "/api": {
-      "target": "http://wxgzhpaytest.maxtropy.com:8001/",
+      "target": "http://wxgzhpaytest.maxtropy.com/",
       "changeOrigin": true,
       "pathRewrite": { "^/api" : "" }
     }
