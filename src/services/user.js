@@ -21,3 +21,18 @@ export function signup({signData}) {
     body: formData,
   });
 }
+
+export function signin({signinData}) {
+  let formData = new FormData();
+  formData.append('phone', '17317924728');
+  formData.append('password', signinData.password);
+  // const headers = {
+  //   'Accept': 'application/json, */*',
+  //   'Content-Type': 'multipart/form-data'
+  // }
+  return request(`/api/signin`, {
+    // headers,
+    method: "POST",
+    body: formData,
+  });
+}

@@ -8,6 +8,10 @@ class SigninInputExample extends React.Component {
   submit = () => {
     this.props.form.validateFields((error, value) => {
       console.log(error, value);
+      this.props.dispatch({
+        type: 'user/signin',
+        payload: { signinData: value },
+      });
     });
   }
 
