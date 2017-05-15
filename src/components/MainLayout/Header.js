@@ -2,7 +2,7 @@ import { NavBar, Icon } from 'antd-mobile';
 import React from 'react';
 import styles from './Header.css';
 
-function Header() {
+function Header({ title }) {
   return (
     <div className={styles.normal}>
       <NavBar
@@ -11,7 +11,9 @@ function Header() {
           <Icon key="0" type="search" style={{ marginRight: '0.32rem' }} />,
           <Icon key="1" type="ellipsis" />,
         ]}
-      >NavBar</NavBar>
+      >
+        {title}
+      </NavBar>
     </div>
   );
 }
