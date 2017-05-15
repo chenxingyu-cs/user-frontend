@@ -11,6 +11,10 @@ class SigninInputExample extends React.Component {
     });
   }
 
+  redirectToSignup = () => {
+    window.location = '/#/user/signup';
+  }
+
   render() {
     const { getFieldProps } = this.props.form;
 
@@ -33,7 +37,7 @@ class SigninInputExample extends React.Component {
         <WhiteSpace />
         <Flex>
           <Flex.Item>
-            <Button className="btn" type="ghost">注册</Button>
+            <Button className="btn" type="ghost" onClick={this.redirectToSignup}>注册</Button>
           </Flex.Item>
           <Flex.Item>
             <Button className="btn" type="primary" onClick={this.submit}>登录</Button>
