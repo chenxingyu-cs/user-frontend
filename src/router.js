@@ -10,6 +10,12 @@ import LaundryMachine from './routes/LaundryMachine.js';
 
 import LaundryLayout from "./routes/LaundryLayout.js";
 
+import UserLayout from "./routes/user/UserLayout.js";
+
+import UserSignup from "./routes/user/UserSignup.js";
+
+import UserSignin from "./routes/user/UserSignin.js";
+
 function RouterConfig({ history }) {
   return (
     <Router history={history}>
@@ -22,6 +28,12 @@ function RouterConfig({ history }) {
         <Route path="station/:stationId" component={LaundryStation} />
         <Route path="machine/:machineId" component={LaundryMachine} />
       </Route>
+      <Route path="/user" component={UserLayout}>
+        <Route path="signup" component={UserSignup} />
+        <Route path="signin" component={UserSignin} />
+      </Route>
+      <Route path="/userSignup" component={UserSignup} />
+      <Route path="/userSignin" component={UserSignin} />
     </Router>
   );
 }

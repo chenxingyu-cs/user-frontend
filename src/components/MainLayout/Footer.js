@@ -138,6 +138,7 @@ class Footer extends React.Component {
             // this.setState({
             //   selectedTab: 'yellowTab',
             // });
+            window.location = '/#/user/signin';
           }}
         >
         </TabBar.Item>

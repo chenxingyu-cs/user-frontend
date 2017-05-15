@@ -38,5 +38,8 @@ export default {
       propWhiteList: [],
     }),
   ],
+  "theme": {
+    "@brand-primary": "#66CCFF",
+  }
   //...
 }
