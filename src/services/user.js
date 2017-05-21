@@ -2,13 +2,12 @@ import request from '../utils/request';
 
 export function sendPinRequest({ phone = 17317924728 }) {
   console.log(phone);
-  return request(`/api/sms?phone=${phone}`);
+  return request(`/api/sms?phone=${phone.replace(/ /g,'')}`);
 }
 
 export function signup({signData}) {
-  console.log(signData.phone);
   let formData = new FormData();
-  formData.append('phone', signData.phone);
+  formData.append('phone', signData.phone.replace(/ /g,''));
   formData.append('pin', signData.pin);
   formData.append('password', signData.password);
   // const headers = {
@@ -24,7 +23,7 @@ export function signup({signData}) {
 
 export function signin({signinData}) {
   let formData = new FormData();
-  formData.append('phone', '17317924728');
+  formData.append('phone', signinData.phone.replace(/ /g,''));
   formData.append('password', signinData.password);
   // const headers = {
   //   'Accept': 'application/json, */*',

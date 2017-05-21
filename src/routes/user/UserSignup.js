@@ -15,9 +15,11 @@ class SignupInputExample extends React.Component {
   }
 
   sendPinRequest = () => {
-    this.props.dispatch({
-      type: 'user/sendPinRequest',
-      payload: { phone: 17317924728 },
+    this.props.form.validateFields((error, value) => {
+      this.props.dispatch({
+        type: 'user/sendPinRequest',
+        payload: { phone: value.phone },
+      });
     });
   }
 
@@ -39,12 +41,14 @@ class SignupInputExample extends React.Component {
         <List renderHeader={() => '注册'}>
           <InputItem
             {...getFieldProps('phone')}
+            type="phone"
             placeholder="123 4567 8910"
           >手机号码</InputItem>
           <Flex>
             <InputItem
               {...getFieldProps('pin')}
               type="number"
+              maxLength={4}
               placeholder="请输入验证码"
             >验证码</InputItem>
             <Button className="btn" type="ghost" onClick={this.sendPinRequest}>获取验证码</Button>

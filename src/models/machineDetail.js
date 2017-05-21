@@ -1,12 +1,13 @@
 import pathToRegexp from 'path-to-regexp';
 import * as laundriesService from '../services/laundries';
+import * as laundryDetailService from '../services/laundryDetail';
 
 export default {
   namespace: 'machineDetail',
   state: {
     machineIntro: {},
     machineFunctions: [],
-    currentFunctionIntro: '',
+    currentFunctionIndex: 0,
   },
   reducers: {
     // save(state, { payload: { data: list, total } }) {
@@ -17,23 +18,22 @@ export default {
 
     querySuccess(state) {
       const result = laundriesService.getMachineDetail(1);
-      const currentFunctionIntro = result.machineFunctions[0].intro;
-      return { ...state, ...result, currentFunctionIntro };
+      const currentFunctionIndex = 0;
+      return { ...state, ...result, currentFunctionIndex };
     },
 
     setCurrentFunctionIntro(state, { payload: index }) {
-      let { machineIntro, machineFunctions, currentFunctionIntro } = state;
-      currentFunctionIntro = state.machineFunctions[index].intro;
-      return { ...state, machineIntro, machineFunctions, currentFunctionIntro };
+      let { machineIntro, machineFunctions, currentFunctionIndex } = state;
+      currentFunctionIndex = index;
+      return { ...state, machineIntro, machineFunctions, currentFunctionIndex };
     },
   },
-  // effects: {
-  //   *fetch({ payload: { l1 = 1, l2 = 1 } }, { call, put }) {
-  //     console.log('in effects!!');
-  //     const { data } = yield call(laundriesService.fetch);
-  //     yield put({ type: 'save', payload: { data } });
-  //   },
-  // },
+  effects: {
+    *sendFunctionControlRequest({ payload: functionId }, { call, put }) {
+        const {data, err} = yield call(laundryDetailService.sendFunctionControlRequest, functionId);
+
+    },
+  },
   subscriptions: {
     setup({ dispatch, history }) {
       return history.listen(({ pathname, query }) => {
