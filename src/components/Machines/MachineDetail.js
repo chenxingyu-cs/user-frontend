@@ -34,7 +34,7 @@ function MachineDetail({ dispatch, machineIntro, machineFunctions, currentFuncti
       <Grid
         data={machineFunctions}
         className={styles.machineFunctionDiv}
-        columnNum={2}
+        columnNum={4}
         hasLine={true}
         onClick={(_el, index) => changeFunctionIntroAccordingToIndex(index)}
         renderItem={(dataItem) => (
@@ -53,7 +53,7 @@ function MachineDetail({ dispatch, machineIntro, machineFunctions, currentFuncti
       <Flex justify="center">
         <Button type="primary" inline style={{ marginRight: '0.1rem' }} onClick={e => submitRequest()}>确认</Button>
         <Button type="primary" inline style={{ marginRight: '0.1rem' }}>取消</Button>
-      </Flex>  
+      </Flex>
     </div>
   );
 }
