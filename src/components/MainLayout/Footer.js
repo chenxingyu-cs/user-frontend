@@ -125,6 +125,7 @@ class Footer extends React.Component {
             // this.setState({
             //   selectedTab: 'greenTab',
             // });
+            window.location = '/#/order/menu';
           }}
         >
         </TabBar.Item>

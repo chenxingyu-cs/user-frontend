@@ -16,6 +16,16 @@ import UserSignup from "./routes/user/UserSignup.js";
 
 import UserSignin from "./routes/user/UserSignin.js";
 
+import OrderLayout from "./routes/order/OrderLayout.js";
+
+import OrderHistory from "./routes/order/OrderHistory.js";
+
+import OrderList from "./routes/order/OrderList.js";
+
+import OrderMenu from "./routes/order/OrderMenu.js";
+
+import OrderSearch from "./routes/order/OrderSearch.js";
+
 function RouterConfig({ history }) {
   return (
     <Router history={history}>
@@ -32,8 +42,12 @@ function RouterConfig({ history }) {
         <Route path="signup" component={UserSignup} />
         <Route path="signin" component={UserSignin} />
       </Route>
-      <Route path="/userSignup" component={UserSignup} />
-      <Route path="/userSignin" component={UserSignin} />
+      <Route path="/order" component={OrderLayout}>
+        <Route path="history" component={OrderHistory} />
+        <Route path="list" component={OrderList} />
+        <Route path="menu" component={OrderMenu} />
+        <Route path="search" component={OrderSearch} />
+      </Route>
     </Router>
   );
 }

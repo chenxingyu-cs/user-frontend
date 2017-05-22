@@ -10,6 +10,8 @@ const app = dva();
 // 3. Model
 app.model(require('./models/example'));
 
+app.model(require("./models/orders"));
+
 app.model(require("./models/user"));
 
 app.model(require('./models/machineDetail'));
