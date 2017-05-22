@@ -14,23 +14,30 @@ export default {
       console.log(result);
       return { ...state, ...result };
     },
+
+    save(state, { payload: { data } }) {
+      console.log(data);
+      return { ...state, ...data };
+    },
   },
   effects: {
     // *fetch({ call, put }) {
     //   const {data} = yield call(orderService.fetch);
     // }
     //
-    // *fetch({ payload: { id } }, { call, put }) {
-    //   console.log(id);
-    //   const { data } = yield call(stationService.fetchStationByStationId, { id });
-    //   yield put({ type: 'save', payload: { data } });
-    // },
+    *fetch({ payload: { id } }, { call, put }) {
+      console.log('fdsfdsfsfdfsfsfs')
+      const { data } = yield call(orderService.fetchOrders, { id });
+      console.log(data);
+      yield put({ type: 'save', payload: { data } });
+    },
   },
   subscriptions: {
     setup({ dispatch, history }) {
       return history.listen(({ pathname, query }) => {
         if (pathname === '/order/list') {
-          dispatch({ type: 'querySuccess', payload: query });
+          dispatch({ type: 'fetch', payload: {id: 1} });
+          // dispatch({ type: 'querySuccess', payload: query });
         }
       });
     },
