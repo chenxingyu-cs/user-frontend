@@ -125,7 +125,7 @@ export function getMachineDetail(id) {
         id: 1,
         name: '桶自洁',
         price: 1.00,
-        intro: '洗衣前自动清洁内桶，所需时间2分钟，0元',
+        intro: '洗衣前自动清洁内桶，所需时间2分钟，1元',
         img: 'https://www.shareicon.net/data/2017/02/07/878493_front_512x512.png',
       },
       {
