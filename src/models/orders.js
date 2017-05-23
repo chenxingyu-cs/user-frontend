@@ -36,8 +36,8 @@ export default {
     setup({ dispatch, history }) {
       return history.listen(({ pathname, query }) => {
         if (pathname === '/order/list') {
-          dispatch({ type: 'fetch', payload: {id: 1} });
-          // dispatch({ type: 'querySuccess', payload: query });
+          // dispatch({ type: 'fetch', payload: {id: 1} });
+          dispatch({ type: 'querySuccess', payload: query });
         }
       });
     },

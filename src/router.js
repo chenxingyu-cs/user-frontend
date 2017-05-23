@@ -26,6 +26,8 @@ import OrderMenu from "./routes/order/OrderMenu.js";
 
 import OrderSearch from "./routes/order/OrderSearch.js";
 
+import OrderDetail from "./routes/order/OrderDetail.js";
+
 function RouterConfig({ history }) {
   return (
     <Router history={history}>
@@ -47,6 +49,7 @@ function RouterConfig({ history }) {
         <Route path="list" component={OrderList} />
         <Route path="menu" component={OrderMenu} />
         <Route path="search" component={OrderSearch} />
+        <Route path="detail" component={OrderDetail} />
       </Route>
     </Router>
   );

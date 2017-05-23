@@ -34,7 +34,7 @@ function MachineDetail({ dispatch, machineIntro, machineFunctions, currentFuncti
       <Grid
         data={machineFunctions}
         className={styles.machineFunctionDiv}
-        columnNum={4}
+        columnNum={2}
         hasLine={true}
         onClick={(_el, index) => changeFunctionIntroAccordingToIndex(index)}
         renderItem={(dataItem) => (

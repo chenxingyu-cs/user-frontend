@@ -25,6 +25,10 @@ function OrderList({ ongoing, finished }) {
     console.log(finished);
   }
 
+  function jumpToOrderDetail(orderId) {
+    console.log(orderId);
+  }
+
   return (
     <div className={styles.normal}>
       <div className={styles.topBar}>
@@ -43,18 +47,14 @@ function OrderList({ ongoing, finished }) {
         </TabPane>
         <TabPane tab="已结束" key="2">
           <div style={{ backgroundColor: '#fff'}}>
-          <Flex>
-            <List style={{ }}>
               {finished.map(order =>
-                <Item arrow="horizontal" multipleLine>
+                <Item arrow="horizontal" multipleLine onClick={e => jumpToOrderDetail(order.orderId)}>
                   {order.machineName}
                   <Brief>
                     完成时间: {order.finishTimestamp}
                   </Brief>
                 </Item>
               )}
-            </List>
-            </Flex>
           </div>
         </TabPane>
       </Tabs>

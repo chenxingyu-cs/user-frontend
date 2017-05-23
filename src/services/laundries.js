@@ -132,23 +132,23 @@ export function getMachineDetail(id) {
         id: 2,
         name: '标准洗',
         price: 2.00,
-        intro: '标准洗，所需时间20分钟，5元',
+        intro: '标准洗，所需时间20分钟，6元',
         img: 'https://www.shareicon.net/data/2017/02/07/878493_front_512x512.png',
       },
-      {
-        id: 3,
-        name: '单脱水',
-        price: 3.00,
-        intro: '单脱水，所需时间10分钟，5元',
-        img: 'https://www.shareicon.net/data/2017/02/07/878493_front_512x512.png',
-      },
-      {
-        id: 4,
-        name: '加强洗',
-        price: 4.00,
-        intro: '加强洗，所需时间20分钟，10元',
-        img: 'https://www.shareicon.net/data/2017/02/07/878493_front_512x512.png',
-      },
+      // {
+      //   id: 3,
+      //   name: '单脱水',
+      //   price: 3.00,
+      //   intro: '单脱水，所需时间10分钟，5元',
+      //   img: 'https://www.shareicon.net/data/2017/02/07/878493_front_512x512.png',
+      // },
+      // {
+      //   id: 4,
+      //   name: '加强洗',
+      //   price: 4.00,
+      //   intro: '加强洗，所需时间20分钟，10元',
+      //   img: 'https://www.shareicon.net/data/2017/02/07/878493_front_512x512.png',
+      // },
     ],
   };
   return getResult;
