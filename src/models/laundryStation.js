@@ -31,6 +31,7 @@ export default {
     *fetch({ payload: { id } }, { call, put }) {
       console.log(id);
       const { data } = yield call(stationService.fetchStationByStationId, { id });
+      console.log('data', data)
       yield put({ type: 'save', payload: { data } });
     },
   },

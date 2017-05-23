@@ -26,9 +26,9 @@ export default {
     // }
     //
     *fetch({ payload: { id } }, { call, put }) {
-      console.log('fdsfdsfsfdfsfsfs')
+      console.log('prefetch')
       const { data } = yield call(orderService.fetchOrders, { id });
-      console.log(data);
+      console.log('data', data);
       yield put({ type: 'save', payload: { data } });
     },
   },
