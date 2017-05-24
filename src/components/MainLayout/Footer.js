@@ -86,8 +86,8 @@ class Footer extends React.Component {
         hidden={this.state.hidden}
       >
         <TabBar.Item
-          title="生活"
-          key="生活"
+          title="洗衣"
+          key="洗衣"
           icon={{ uri: 'https://zos.alipayobjects.com/rmsportal/sifuoDUQdAFKAVcFGROC.svg' }}
           selectedIcon={{ uri: 'https://zos.alipayobjects.com/rmsportal/iSrlOTqrKddqbOmlvUfq.svg' }}
           selected={this.state.selectedTabIndex === 0}
@@ -118,14 +118,14 @@ class Footer extends React.Component {
         <TabBar.Item
           icon={{ uri: 'https://zos.alipayobjects.com/rmsportal/psUFoAMjkCcjqtUCNPxB.svg' }}
           selectedIcon={{ uri: 'https://zos.alipayobjects.com/rmsportal/IIRLrXXrFAhXVdhMWgUI.svg' }}
-          title="朋友"
-          key="朋友"
+          title="订单"
+          key="订单"
           selected={this.state.selectedTabIndex === 2}
           onPress={() => {
             // this.setState({
             //   selectedTab: 'greenTab',
             // });
-            window.location = '/#/order/menu';
+            window.location = '/#/order/list';
           }}
         >
         </TabBar.Item>
