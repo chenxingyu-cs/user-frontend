@@ -10,6 +10,7 @@ function LaundryStation({ machines: dataSource, name }) {
     const tmp = dataSource[i];
     itemList.push(<LaundryStationCard machine={tmp} />);
   }
+
   return (
     <div className={styles.normal}>
       <List renderHeader={() => name} className="my-list">
@@ -21,6 +22,7 @@ function LaundryStation({ machines: dataSource, name }) {
 
 function mapStateToProps(state) {
   const { name, machines, id } = state.laundryStation;
+
   return { name, machines, id };
 }
 

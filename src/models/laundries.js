@@ -12,7 +12,6 @@ export default {
   namespace: 'laundries',
   state: {
     list: [],
-    total: 0,
   },
   reducers: {
     // save(state, { payload: { data: list, total } }) {
@@ -24,6 +23,20 @@ export default {
     querySuccess(state) {
       const result = laundriesService.fetch();
       return { ...state, ...result };
+    },
+
+    save(state, { payload: { data } }) {
+      const list = {list: data};
+      console.log(list);
+      return { ...state, ...list };
+    },
+  },
+
+  effects: {
+    *fetch({ payload: { id } }, { call, put }) {
+      console.log(id);
+      const { data } = yield call(laundriesService.fetchLaundriesNearby, { id });
+      yield put({ type: 'save', payload: { data } });
     },
   },
   // effects: {
@@ -37,7 +50,8 @@ export default {
     setup({ dispatch, history }) {
       return history.listen(({ pathname, query }) => {
         if (pathname === '/laundry/list') {
-          dispatch({ type: 'querySuccess', payload: query });
+          // dispatch({ type: 'querySuccess', payload: query });
+          dispatch({ type: 'fetch', payload: {id: 1} });
         }
       });
     },

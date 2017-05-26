@@ -1,4 +1,4 @@
-
+import request from '../utils/request';
 
 export function fetch() {
   const getResult = {
@@ -152,4 +152,10 @@ export function getMachineDetail(id) {
     ],
   };
   return getResult;
+}
+
+export function fetchLaundriesNearby({ id = 1 }) {
+  // return request(`/api/station?id=${id}`);
+  return request(`http://115.159.49.23/station/all?city=%E5%8C%97%E4%BA%AC&lati=37&longi=122`);
+
 }
