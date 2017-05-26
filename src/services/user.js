@@ -2,7 +2,7 @@ import request from '../utils/request';
 
 export function sendPinRequest({ phone = 17317924728 }) {
   console.log(phone);
-  return request(`http://wxgzhpaytest.maxtropy.com/sms?phone=${phone.replace(/ /g,'')}`);
+  return request(`http://115.159.49.23/sms?phone=${phone.replace(/ /g,'')}`);
 }
 
 export function signup({signData}) {
@@ -14,7 +14,7 @@ export function signup({signData}) {
   //   'Accept': 'application/json, */*',
   //   'Content-Type': 'multipart/form-data'
   // }
-  return request(`http://wxgzhpaytest.maxtropy.com/signup`, {
+  return request(`http://115.159.49.23/signup`, {
     // headers,
     method: "POST",
     body: formData,
@@ -29,7 +29,7 @@ export function signin({signinData}) {
   //   'Accept': 'application/json, */*',
   //   'Content-Type': 'multipart/form-data'
   // }
-  return request(`http://wxgzhpaytest.maxtropy.com/signin`, {
+  return request(`http://115.159.49.23/signin`, {
     // headers,
     method: "POST",
     body: formData,
