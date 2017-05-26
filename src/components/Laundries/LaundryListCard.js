@@ -8,12 +8,17 @@ const Brief = Item.Brief;
 
 function LaundryListCard(laundry) {
 
-  const { id, name, distance, washerNum, dryerNum } = laundry.laundry;
+  const { id, name, distance, washerNum, dryerNum, freeWasher, freeDryer } = laundry.laundry;
   function handleClick(id) {
     window.location = '/#/laundry/station/' + id;
   }
 
-
+  // let washerBrief;
+  // if (freeWasher == 0) {
+  //   washerBrief = (
+  //
+  //   )
+  // }
 
   return (
     <div className={styles.normal}>
@@ -27,7 +32,10 @@ function LaundryListCard(laundry) {
         multipleLine
       >
         {name}
-        <Brief wrap="true">洗衣{washerNum}台 烘干{dryerNum}台</Brief>
+        <Brief wrap="true">
+        <span>洗衣{washerNum}台</span> <span>空闲{freeWasher}台</span>
+        </Brief>
+        <Brief wrap="true">烘干{washerNum}台 空闲{freeDryer}台</Brief>
       </Item>
     </div>
   );

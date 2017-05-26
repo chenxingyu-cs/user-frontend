@@ -1,8 +1,9 @@
 import request from '../utils/request';
+import { HOST_URL } from '../utils/constants';
 
 export function sendPinRequest({ phone = 17317924728 }) {
   console.log(phone);
-  return request(`http://115.159.49.23/sms?phone=${phone.replace(/ /g,'')}`);
+  return request(`${HOST_URL}/sms?phone=${phone.replace(/ /g,'')}`);
 }
 
 export function signup({signData}) {
@@ -14,7 +15,7 @@ export function signup({signData}) {
   //   'Accept': 'application/json, */*',
   //   'Content-Type': 'multipart/form-data'
   // }
-  return request(`http://115.159.49.23/signup`, {
+  return request(`${HOST_URL}/signup`, {
     // headers,
     method: "POST",
     body: formData,
@@ -29,7 +30,7 @@ export function signin({signinData}) {
   //   'Accept': 'application/json, */*',
   //   'Content-Type': 'multipart/form-data'
   // }
-  return request(`http://115.159.49.23/signin`, {
+  return request(`${HOST_URL}/signin`, {
     // headers,
     method: "POST",
     body: formData,

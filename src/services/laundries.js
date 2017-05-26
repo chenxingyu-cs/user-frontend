@@ -1,4 +1,5 @@
 import request from '../utils/request';
+import { HOST_URL } from '../utils/constants';
 
 export function fetch() {
   const getResult = {
@@ -135,20 +136,6 @@ export function getMachineDetail(id) {
         intro: '标准洗，所需时间20分钟，6元',
         img: 'https://www.shareicon.net/data/2017/02/07/878493_front_512x512.png',
       },
-      // {
-      //   id: 3,
-      //   name: '单脱水',
-      //   price: 3.00,
-      //   intro: '单脱水，所需时间10分钟，5元',
-      //   img: 'https://www.shareicon.net/data/2017/02/07/878493_front_512x512.png',
-      // },
-      // {
-      //   id: 4,
-      //   name: '加强洗',
-      //   price: 4.00,
-      //   intro: '加强洗，所需时间20分钟，10元',
-      //   img: 'https://www.shareicon.net/data/2017/02/07/878493_front_512x512.png',
-      // },
     ],
   };
   return getResult;
@@ -156,6 +143,6 @@ export function getMachineDetail(id) {
 
 export function fetchLaundriesNearby({ id = 1 }) {
   // return request(`/api/station?id=${id}`);
-  return request(`http://115.159.49.23/station/all?city=%E5%8C%97%E4%BA%AC&lati=37&longi=122`);
+  return request(`${HOST_URL}/station/all?city=%E5%8C%97%E4%BA%AC&lati=37&longi=122`);
 
 }
