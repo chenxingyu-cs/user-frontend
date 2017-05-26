@@ -15,7 +15,7 @@ function MachineDetail({ dispatch, id, description, imageSrc, modelName, status,
   }
 
   function submitRequest() {
-    const functionId = machineFunctions[currentFunctionIndex].id;
+    const functionId = functions[currentFunctionIndex].id;
     // dispatch({
     //   type: 'machineDetail/sendFunctionControlRequest',
     //   payload: functionId,
