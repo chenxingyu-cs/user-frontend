@@ -6,7 +6,7 @@ import MachineIntroductionCard from './MachineIntroductionCard';
 // import MachineFunctionCard from './MachineFunctionCard';
 
 
-function MachineDetail({ dispatch, machineIntro, machineFunctions, currentFunctionIndex }) {
+function MachineDetail({ dispatch, id, description, imageSrc, modelName, status, functions, currentFunctionIndex }) {
   function changeFunctionIntroAccordingToIndex(index) {
     dispatch({
       type: 'machineDetail/setCurrentFunctionIntro',
@@ -23,23 +23,25 @@ function MachineDetail({ dispatch, machineIntro, machineFunctions, currentFuncti
     window.location = 'http://wxgzhpaytest.maxtropy.com/order/pay?funcId=' + functionId;
   }
 
+  console.log(functions[0]);
+
   return (
 
     <div className={styles.normal}>
 
-      <MachineIntroductionCard machine={machineIntro} />
+      <MachineIntroductionCard imageSrc={imageSrc} description={description} />
       <div className={styles.currentFunctionIndex}>
-        {machineFunctions[currentFunctionIndex].intro}
+        {functions[currentFunctionIndex].description}
       </div>
       <Grid
-        data={machineFunctions}
+        data={functions}
         className={styles.machineFunctionDiv}
-        columnNum={2}
+        columnNum={functions.length}
         hasLine={true}
         onClick={(_el, index) => changeFunctionIntroAccordingToIndex(index)}
         renderItem={(dataItem) => (
           <div className={styles.singleFunction}>
-            <img src={dataItem.img} role="presentation" style={{ width: '40%' }} />
+            <img src="https://www.shareicon.net/data/2017/02/07/878493_front_512x512.png" role="presentation" style={{ width: '40%' }} />
             <div>
               <span>{dataItem.name}</span>
             </div>
@@ -52,15 +54,15 @@ function MachineDetail({ dispatch, machineIntro, machineFunctions, currentFuncti
       <WhiteSpace />
       <Flex justify="center">
         <Button type="primary" inline style={{ marginRight: '0.1rem' }} onClick={e => submitRequest()}>确认</Button>
-        <Button type="primary" inline style={{ marginRight: '0.1rem' }}>取消</Button>
       </Flex>
     </div>
   );
 }
 
 function mapStateToProps(state) {
-  const { machineIntro, machineFunctions, currentFunctionIndex } = state.machineDetail;
-  return { machineIntro, machineFunctions, currentFunctionIndex };
+  console.log('fdsfsdfsd', state.machineDetail)
+  const { id, description, imageSrc, modelName, status, functions, currentFunctionIndex } = state.machineDetail;
+  return { id, description, imageSrc, modelName, status, functions, currentFunctionIndex };
 }
 
 export default connect(mapStateToProps)(MachineDetail);

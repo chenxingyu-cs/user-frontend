@@ -1,14 +1,28 @@
 import pathToRegexp from 'path-to-regexp';
 import * as laundriesService from '../services/laundries';
 import * as laundryDetailService from '../services/laundryDetail';
+import * as machineService from '../services/machine';
 
 export default {
   namespace: 'machineDetail',
   state: {
-    machineIntro: {},
-    machineFunctions: [],
+    id: 0,
+    description: "",
+    imageSrc: "",
+    modelName: "",
+    status: "",
+    functions: [
+      {
+        id: 0,
+        name: "",
+        price: 0,
+        time: 0,
+        description: "",
+      }
+    ],
     currentFunctionIndex: 0,
   },
+
   reducers: {
     // save(state, { payload: { data: list, total } }) {
     //   console.log(list)
@@ -23,15 +37,28 @@ export default {
     },
 
     setCurrentFunctionIntro(state, { payload: index }) {
+      console.log('reduce change')
       let { machineIntro, machineFunctions, currentFunctionIndex } = state;
       currentFunctionIndex = index;
       return { ...state, machineIntro, machineFunctions, currentFunctionIndex };
+    },
+
+    save(state, { payload: { data } }) {
+      console.log('machine save', data)
+
+      return { ...state, ...data };
     },
   },
   effects: {
     *sendFunctionControlRequest({ payload: functionId }, { call, put }) {
         const {data, err} = yield call(laundryDetailService.sendFunctionControlRequest, functionId);
 
+    },
+
+    *fetch({ payload: { id } }, { call, put }) {
+      const { data } = yield call(machineService.fetchMachineByMachineId, { id });
+      console.log("data1111", data)
+      yield put({ type: 'save', payload: { data } });
     },
   },
   subscriptions: {
@@ -40,7 +67,8 @@ export default {
         const match = pathToRegexp('/laundry/machine/:machineId').exec(pathname);
         if (match) {
           const machineId = match[1];
-          dispatch({ type: 'querySuccess', payload: query });
+          // dispatch({ type: 'querySuccess', payload: query });
+          dispatch({ type: 'fetch', payload: {id: machineId} });
         }
         // if (pathname === '/laundryPoint') {
         //   dispatch({ type: 'querySuccess', payload: query });
