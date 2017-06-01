@@ -6,6 +6,10 @@ import styles from './LaundryStationCard.css';
 const Item = List.Item;
 const Brief = Item.Brief;
 
+const aaa = (
+  <span> FFFFFF </span>
+);
+
 function LaundryStationCard(machine) {
 
   function handleClick(id) {

@@ -13,12 +13,16 @@ function LaundryListCard(laundry) {
     window.location = '/#/laundry/station/' + id;
   }
 
-  // let washerBrief;
-  // if (freeWasher == 0) {
-  //   washerBrief = (
-  //
-  //   )
-  // }
+  let washerStyle = styles.couldAccessMachine;
+  let dryerStyle = styles.couldAccessMachine;
+  if (freeWasher === 0) {
+    washerStyle = styles.noFreeMachine;
+    console.log(name)
+  }
+  if (freeDryer === 0) {
+    dryerStyle = styles.noFreeMachine;
+    console.log(name)
+  }
 
   return (
     <div className={styles.normal}>
@@ -28,14 +32,22 @@ function LaundryListCard(laundry) {
         extra={distance}
         align="top"
         onClick={() => { handleClick(id); }}
-        thumb="https://zos.alipayobjects.com/rmsportal/dNuvNrtqUztHCwM.png"
         multipleLine
       >
         {name}
         <Brief wrap="true">
-        <span>洗衣{washerNum}台</span> <span>空闲{freeWasher}台</span>
+        <img src="http://res.cloudinary.com/dehc3tigv/image/upload/v1496212733/washer_zqpsbs.jpg" />
+        <span> 洗衣{washerNum}台 </span>
+        <span className={washerStyle}>空闲{freeWasher}台</span>
+
         </Brief>
-        <Brief wrap="true">烘干{washerNum}台 空闲{freeDryer}台</Brief>
+
+        <Brief wrap="true">
+        <img src="http://res.cloudinary.com/dehc3tigv/image/upload/v1496212730/dryer_pvf9q2.jpg" />
+        <span> 烘干{washerNum}台 </span>
+        <span className={dryerStyle}>空闲{freeDryer}台</span>
+        </Brief>
+
       </Item>
     </div>
   );

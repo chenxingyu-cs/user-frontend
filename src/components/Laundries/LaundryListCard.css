@@ -1,3 +1,11 @@
 
 .normal {
 }
+
+.noFreeMachine {
+  color: #ec001f;
+}
+
+.couldAccessMachine {
+  color: #0CB1E4;
+}
