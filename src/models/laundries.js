@@ -1,5 +1,6 @@
 import * as laundriesService from '../services/laundries';
-
+import OAuth from 'wechat-oauth';
+const client = new OAuth('wxf53ebc8656c7b6c2', 'ef3649c7af8eb1edcd3c6a2f56fd52b6');
 // export default {
 //   namespace: 'laundries',
 //   state: {},
@@ -51,6 +52,14 @@ export default {
       return history.listen(({ pathname, query }) => {
         if (pathname === '/laundry/list') {
           // dispatch({ type: 'querySuccess', payload: query });
+          const code = query.code;
+          client.getAccessToken(code, function (err, result) {
+            var accessToken = result.data.access_token;
+            var openid = result.data.openid;
+            client.getUser(openid, function (err, result) {
+              console.log(result);
+            });
+          });
           dispatch({ type: 'fetch', payload: {id: 1} });
         }
       });
