@@ -36,8 +36,5 @@
   },
   "theme": {
     "@brand-primary": "#66CCFF"
-  },
-  "browser": {
-    "child_process": false
   }
 }
