@@ -40,9 +40,6 @@ export default {
   ],
   "theme": {
     "@brand-primary": "#66CCFF",
-  },
-  node: {
-    child_process: 'empty'
   }
   //...
 }
