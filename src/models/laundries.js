@@ -52,6 +52,7 @@ export default {
         if (pathname === '/laundry/list') {
           // dispatch({ type: 'querySuccess', payload: query });
           dispatch({ type: 'fetch', payload: {id: 1} });
+          console.log(query);
         }
       });
     },
