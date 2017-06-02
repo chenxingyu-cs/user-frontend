@@ -28,6 +28,8 @@ import OrderSearch from "./routes/order/OrderSearch.js";
 
 import OrderDetail from "./routes/order/OrderDetail.js";
 
+import WechatEntrance from "./routes/WechatEntrance.js";
+
 function RouterConfig({ history }) {
   return (
     <Router history={history}>
@@ -51,6 +53,7 @@ function RouterConfig({ history }) {
         <Route path="search" component={OrderSearch} />
         <Route path="detail" component={OrderDetail} />
       </Route>
+      <Route path="/wechatEntrance" component={WechatEntrance} />
     </Router>
   );
 }

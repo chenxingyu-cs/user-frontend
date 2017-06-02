@@ -49,9 +49,12 @@ export default {
   subscriptions: {
     setup({ dispatch, history }) {
       return history.listen(({ pathname, query }) => {
+        console.log('query', query);
+        console.log('pathname', pathname);
+
         if (pathname === '/laundry/list') {
           // dispatch({ type: 'querySuccess', payload: query });
-          console.log(query);
+
           dispatch({ type: 'fetch', payload: {id: 1} });
 
         }
