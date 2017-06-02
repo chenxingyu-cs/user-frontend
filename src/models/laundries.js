@@ -52,13 +52,8 @@ export default {
         if (pathname === '/laundry/list') {
           // dispatch({ type: 'querySuccess', payload: query });
           const code = query.code;
-          wechat.getAccessToken(code, function (err, result) {
-            var accessToken = result.data.access_token;
-            var openid = result.data.openid;
-            wechat.getUser(openid, function (err, result) {
-              console.log(result);
-            });
-          });
+          const res = wechat.getUserinfo(code);
+          console.log("laundries: " + res);
           dispatch({ type: 'fetch', payload: {id: 1} });
         }
       });
