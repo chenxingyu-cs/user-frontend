@@ -6,7 +6,7 @@ import MachineIntroductionCard from './MachineIntroductionCard';
 // import MachineFunctionCard from './MachineFunctionCard';
 
 
-function MachineDetail({ dispatch, id, description, imageSrc, modelName, status, functions, currentFunctionIndex }) {
+function MachineDetail({ dispatch, id, description, imageSrc, modelName, status, functions, currentFunctionIndex, openid }) {
   function changeFunctionIntroAccordingToIndex(index) {
     dispatch({
       type: 'machineDetail/setCurrentFunctionIntro',
@@ -16,11 +16,15 @@ function MachineDetail({ dispatch, id, description, imageSrc, modelName, status,
 
   function submitRequest() {
     const functionId = functions[currentFunctionIndex].id;
-    // dispatch({
-    //   type: 'machineDetail/sendFunctionControlRequest',
-    //   payload: functionId,
-    // });
-    window.location = 'http://wxgzhpaytest.maxtropy.com/order/pay?funcId=' + functionId;
+    console.log(functionId)
+    dispatch({
+      type: 'machineDetail/sendFunctionControlRequest',
+      payload: {
+        functionId,
+        openid,
+      },
+    });
+    // window.location = 'http://wxgzhpaytest.maxtropy.com/order/pay?funcId=' + functionId;
   }
 
   console.log(functions[0]);
@@ -62,7 +66,8 @@ function MachineDetail({ dispatch, id, description, imageSrc, modelName, status,
 function mapStateToProps(state) {
   console.log('fdsfsdfsd', state.machineDetail)
   const { id, description, imageSrc, modelName, status, functions, currentFunctionIndex } = state.machineDetail;
-  return { id, description, imageSrc, modelName, status, functions, currentFunctionIndex };
+  const { openid } = state.wechatInfo;
+  return { id, description, imageSrc, modelName, status, functions, currentFunctionIndex, openid };
 }
 
 export default connect(mapStateToProps)(MachineDetail);

@@ -2,7 +2,7 @@ import request from '../utils/request';
 import { HOST_URL } from '../utils/constants';
 
 export function fetchOrders({ openid = "" }) {
-  return request(`${HOST_URL}/order/all?openid=${openid}`);
+  return request(`${HOST_URL}/order/all?openid=ouyaXwq_r9Z0GXF3KUQjjMQzpqoA`);
 }
 
 
