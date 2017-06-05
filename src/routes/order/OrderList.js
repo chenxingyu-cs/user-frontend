@@ -32,6 +32,7 @@ function OrderList({ ongoing, finished, openid, headimgurl }) {
   return (
     <div className={styles.normal}>
       <div className={styles.topBar}>
+        <img src={headimgurl} />
       </div>
       <Tabs defaultActiveKey="1" onChange={callback} onTabClick={handleTabClick}>
         <TabPane tab="进行中" key="1">
@@ -43,7 +44,6 @@ function OrderList({ ongoing, finished, openid, headimgurl }) {
             <h4>{ongoing[0].address} | {ongoing[0].machineName} | {ongoing[0].functionName} </h4>
             price: {ongoing[0].price}
             openid: {openid}
-            img: {headimgurl}
           </div>
           </div>
         </TabPane>

@@ -16,19 +16,15 @@ export default {
     },
 
     save(state, { payload: { data } }) {
-      console.log(data);
       return { ...state, ...data };
     },
   },
   effects: {
-    // *fetch({ call, put }) {
-    //   const {data} = yield call(orderService.fetch);
-    // }
-    //
-    *fetch({ payload: { id } }, { call, put }) {
-      console.log('prefetch')
-      const { data } = yield call(orderService.fetchOrders, { id });
-      console.log('data', data);
+    *fetch({ payload: { id } }, { call, put, select }) {
+      const openid = yield select(state => state.wechatInfo.openid);
+      console.log('order openid', openid);
+      const { data } = yield call(orderService.fetchOrders, { openid });
+      console.log('order data', data);
       yield put({ type: 'save', payload: { data } });
     },
   },
@@ -36,8 +32,8 @@ export default {
     setup({ dispatch, history }) {
       return history.listen(({ pathname, query }) => {
         if (pathname === '/order/list') {
-          // dispatch({ type: 'fetch', payload: {id: 1} });
-          dispatch({ type: 'querySuccess', payload: query });
+          dispatch({ type: 'fetch', payload: {id: 1} });
+          // dispatch({ type: 'querySuccess', payload: query });
         }
       });
     },
