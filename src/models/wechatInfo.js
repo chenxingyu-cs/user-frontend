@@ -14,7 +14,7 @@ export default {
   },
   reducers: {
     save(state, { payload: { data } }) {
-      
+      console.log(data);
       return { ...state, ...data };
     },
   },
@@ -22,7 +22,6 @@ export default {
     *fetch({ payload: { code } }, { call, put }) {
       console.log('code', code);
       const { data } = yield call(wechatService.fetchOpenId, { code });
-      console.log(data)
       yield put({ type: 'save', payload: { data } });
     },
   },

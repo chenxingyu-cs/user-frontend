@@ -21,6 +21,8 @@ function LaundryList({ list: dataSource }) {
 
 function mapStateToProps(state) {
   const { list, total } = state.laundries;
+  const { openid, headimgurl } = state.wechatInfo;
+  console.log('----wechat info----', openid, headimgurl);
   return { list, total };
 }
 
