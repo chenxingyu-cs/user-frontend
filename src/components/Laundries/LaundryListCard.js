@@ -36,14 +36,14 @@ function LaundryListCard(laundry) {
       >
         {name}
         <Brief wrap="true">
-        <img src="http://res.cloudinary.com/dehc3tigv/image/upload/v1496212733/washer_zqpsbs.jpg" />
+        <img src="http://res.cloudinary.com/xnchen/image/upload/v1496212733/washer.jpg" />
         <span> 洗衣{washerNum}台 </span>
         <span className={washerStyle}>空闲{freeWasher}台</span>
 
         </Brief>
 
         <Brief wrap="true">
-        <img src="http://res.cloudinary.com/dehc3tigv/image/upload/v1496212730/dryer_pvf9q2.jpg" />
+        <img src="http://res.cloudinary.com/xnchen/image/upload/v1496212730/dryer.jpg" />
         <span> 烘干{washerNum}台 </span>
         <span className={dryerStyle}>空闲{freeDryer}台</span>
         </Brief>
