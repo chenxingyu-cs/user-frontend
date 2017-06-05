@@ -48,9 +48,7 @@ function OrderList({ ongoing, finished, openid, headimgurl, nickname }) {
             <div className={styles.orderDetail}>
               <p style={{fontWeight: 'bold'}}>
                 {ongoing[0].address}
-                <WhiteSpace />
                 {ongoing[0].machineName}
-                <WhiteSpace />
                 {ongoing[0].functionName}
               </p>
               金额: {ongoing[0].price}元
