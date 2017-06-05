@@ -11,7 +11,7 @@ class SignupInputExample extends React.Component {
   // const {dispatch} = this.props;
 
   redirectToSignin = () => {
-    window.location = '/#/user/signin';
+    window.location = '/user/signin';
   }
 
   sendPinRequest = () => {

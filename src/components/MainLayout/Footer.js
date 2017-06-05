@@ -95,7 +95,7 @@ class Footer extends React.Component {
             // this.setState({
             //   selectedTab: 'blueTab',
             // });
-            window.location = '/#/laundry/list';
+            window.location = '/laundry/list';
           }}
           data-seed="logId"
         >
@@ -110,7 +110,7 @@ class Footer extends React.Component {
             // this.setState({
             //   selectedTab: 'redTab',
             // });
-            window.location = '/#/laundry/station/10';
+            window.location = '/laundry/station/10';
           }}
           data-seed="logId1"
         >
@@ -125,7 +125,7 @@ class Footer extends React.Component {
             // this.setState({
             //   selectedTab: 'greenTab',
             // });
-            window.location = '/#/order/list';
+            window.location = '/order/list';
           }}
         >
         </TabBar.Item>
@@ -139,7 +139,7 @@ class Footer extends React.Component {
             // this.setState({
             //   selectedTab: 'yellowTab',
             // });
-            window.location = '/#/user/signin';
+            window.location = '/user/signin';
           }}
         >
         </TabBar.Item>

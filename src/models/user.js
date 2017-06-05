@@ -25,7 +25,7 @@ export default {
       const toastMessage = successSignup ? '注册成功！' : '注册失败';
       if (successSignup) {
         Toast.success('注册成功!!!');
-        window.location = '/#/user/signin';
+        window.location = '/user/signin';
       } else {
         Toast.fail('注册失败...');
       }
@@ -36,7 +36,7 @@ export default {
       const successSignup = !(err.toString() === 'Error: Unauthorized');
       if (successSignup) {
         Toast.success('登录成功!!!');
-        window.location = '/#/user/signin';
+        window.location = '/user/signin';
       } else {
         Toast.fail('登录失败...');
       }

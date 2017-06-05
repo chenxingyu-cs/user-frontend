@@ -10,7 +10,7 @@ function LaundryListCard(laundry) {
 
   const { id, name, distance, washerNum, dryerNum, freeWasher, freeDryer } = laundry.laundry;
   function handleClick(id) {
-    window.location = '/#/laundry/station/' + id;
+    window.location = '/laundry/station/' + id;
   }
 
   let washerStyle = styles.couldAccessMachine;

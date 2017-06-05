@@ -13,7 +13,7 @@ const aaa = (
 function LaundryStationCard(machine) {
 
   function handleClick(id) {
-    window.location = '/#/laundry/machine/' + id;
+    window.location = '/laundry/machine/' + id;
   }
 
   const { id, description, status, functions } = machine.machine;

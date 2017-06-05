@@ -16,7 +16,7 @@ class SigninInputExample extends React.Component {
   }
 
   redirectToSignup = () => {
-    window.location = '/#/user/signup';
+    window.location = '/user/signup';
   }
 
   render() {
