@@ -17,6 +17,7 @@ function MachineDetail({ dispatch, id, description, imageSrc, modelName, status,
   function submitRequest() {
     const functionId = functions[currentFunctionIndex].id;
     console.log(functionId)
+    // console.log(WeixinJSBridge)
     dispatch({
       type: 'machineDetail/sendFunctionControlRequest',
       payload: {

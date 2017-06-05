@@ -13,7 +13,7 @@ const Brief = Item.Brief;
 
 const TabPane = Tabs.TabPane;
 
-function OrderList({ ongoing, finished, openid, headimgurl }) {
+function OrderList({ ongoing, finished, openid, headimgurl, nickname }) {
 
   function callback(key) {
     console.log('onChange', key);
@@ -32,6 +32,7 @@ function OrderList({ ongoing, finished, openid, headimgurl }) {
   return (
     <div className={styles.normal}>
       <div className={styles.topBar}>
+      <h1> {nickname} </h1>
         <img src={headimgurl} />
       </div>
       <Tabs defaultActiveKey="1" onChange={callback} onTabClick={handleTabClick}>
@@ -76,8 +77,8 @@ function OrderList({ ongoing, finished, openid, headimgurl }) {
 
 function mapStateToProps(state) {
   const { ongoing, finished } = state.orders;
-  const { openid, headimgurl } = state.wechatInfo;
-  return { ongoing, finished, openid, headimgurl };
+  const { openid, headimgurl, nickname } = state.wechatInfo;
+  return { ongoing, finished, openid, headimgurl, nickname };
 }
 
 export default connect(mapStateToProps)(OrderList);
