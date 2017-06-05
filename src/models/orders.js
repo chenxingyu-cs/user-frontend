@@ -4,8 +4,32 @@ import {Toast} from 'antd-mobile';
 export default {
   namespace: 'orders',
   state: {
-    "ongoing": [],
-    "finished": [],
+    ongoing: [
+      {
+        address: '',
+        createdTimestamp: '',
+        finishTimestamp: '',
+        finished: false,
+        functionName: '',
+        machineName: '',
+        orderId: '',
+        paid: false,
+        price: '',
+      }
+    ],
+    finished: [
+      {
+        address: '',
+        createdTimestamp: '',
+        finishTimestamp: '',
+        finished: false,
+        functionName: '',
+        machineName: '',
+        orderId: '',
+        paid: false,
+        price: '',
+      }
+    ],
   },
 
   reducers: {

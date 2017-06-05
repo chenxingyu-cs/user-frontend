@@ -41,9 +41,17 @@ function OrderList({ ongoing, finished, openid, headimgurl }) {
             订单号: {ongoing[0].orderId}
           </div>
           <div>
-            <h4>{ongoing[0].address} | {ongoing[0].machineName} | {ongoing[0].functionName} </h4>
-            price: {ongoing[0].price}
-            openid: {openid}
+            <h4>
+              {ongoing[0].address}
+              <WhiteSpace />
+              {ongoing[0].machineName}
+              <WhiteSpace />
+              {ongoing[0].functionName}
+
+            </h4>
+
+
+            price: {ongoing[0].price}元
           </div>
           </div>
         </TabPane>
