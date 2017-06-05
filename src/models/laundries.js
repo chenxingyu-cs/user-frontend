@@ -27,14 +27,12 @@ export default {
 
     save(state, { payload: { data } }) {
       const list = {list: data};
-      console.log(list);
       return { ...state, ...list };
     },
   },
 
   effects: {
     *fetch({ payload: { id } }, { call, put }) {
-      console.log(id);
       const { data } = yield call(laundriesService.fetchLaundriesNearby, { id });
       yield put({ type: 'save', payload: { data } });
     },
@@ -50,8 +48,8 @@ export default {
     setup({ dispatch, history }) {
       return history.listen(({ pathname, query }) => {
         if (pathname === '/laundry/list') {
-          // dispatch({ type: 'querySuccess', payload: query });
           dispatch({ type: 'fetch', payload: {id: 1} });
+
         }
       });
     },

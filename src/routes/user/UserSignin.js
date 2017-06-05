@@ -1,5 +1,6 @@
 import { connect } from 'dva';
 import { Button, Flex, List, InputItem, WhiteSpace } from 'antd-mobile';
+import { browserHistory } from 'dva/router'
 import styles from './UserSignin.css';
 import { createForm } from 'rc-form';
 
@@ -16,7 +17,8 @@ class SigninInputExample extends React.Component {
   }
 
   redirectToSignup = () => {
-    window.location = '/#/user/signup';
+    // window.location = '/user/signup';
+    browserHistory.push('/user/signup');
   }
 
   render() {

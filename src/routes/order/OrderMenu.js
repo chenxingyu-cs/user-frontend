@@ -12,11 +12,11 @@ function OrderMenu() {
       <Item
         thumb="https://zos.alipayobjects.com/rmsportal/dNuvNrtqUztHCwM.png"
         arrow="horizontal"
-        onClick={() => {window.location = '/#/order/list';}}
+        onClick={() => {window.location = '/order/list';}}
       >订单管理</Item>
       <Item thumb="https://zos.alipayobjects.com/rmsportal/UmbJMbWOejVOpxe.png"
         arrow="horizontal"
-        onClick={() => {window.location = '/#/order/search';}}
+        onClick={() => {window.location = '/order/search';}}
       >订单查询</Item>
     </List>
   );

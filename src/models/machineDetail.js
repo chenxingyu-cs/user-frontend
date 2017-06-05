@@ -50,8 +50,10 @@ export default {
     },
   },
   effects: {
-    *sendFunctionControlRequest({ payload: functionId }, { call, put }) {
-        const {data, err} = yield call(laundryDetailService.sendFunctionControlRequest, functionId);
+    *sendFunctionControlRequest({ payload }, { call, put }) {
+      const { functionId, openid } = payload;
+      console.log(functionId, openid);
+      const {data} = yield call(machineService.sendFunctionControlRequest, payload);
 
     },
 

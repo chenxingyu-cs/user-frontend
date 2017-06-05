@@ -12,7 +12,7 @@ const Brief = Item.Brief;
 
 const TabPane = Tabs.TabPane;
 
-function OrderList({ ongoing, finished }) {
+function OrderList({ ongoing, finished, openid, headimgurl, nickname }) {
 
   function callback(key) {
     console.log('onChange', key);
@@ -32,10 +32,10 @@ function OrderList({ ongoing, finished }) {
     <div className={styles.normal}>
       <div className={styles.topBar}>
         <div className={styles.avatarDiv}>
-          <img src="https://www.themarysue.com/wp-content/uploads/2015/12/avatar.jpeg" className={styles.avatarImg}/>
+          <img src={headimgurl} className={styles.avatarImg}/>
         </div>
         <div className={styles.nameDiv}>
-          <p> Hi, Wenhao.Yun </p>
+          <p> Hi, {nickname} </p>
         </div>
         <img src="http://www.freeiconspng.com/uploads/laundry-basket-icon-png-2.png" className={styles.backgroundImg}/>
       </div>
@@ -46,8 +46,14 @@ function OrderList({ ongoing, finished }) {
               订单号: <p style={{fontWeight: 'bold', display: 'inline'}}>{ongoing[0].orderId}</p>
             </div>
             <div className={styles.orderDetail}>
-              <p style={{fontWeight: 'bold'}}>{ongoing[0].address} | {ongoing[0].machineName} | {ongoing[0].functionName} </p>
-              金额: {ongoing[0].price}
+              <p style={{fontWeight: 'bold'}}>
+                {ongoing[0].address}
+                <WhiteSpace />
+                {ongoing[0].machineName}
+                <WhiteSpace />
+                {ongoing[0].functionName}
+              </p>
+              金额: {ongoing[0].price}元
               <Flex>
                 <Flex.Item>
                   <Button className="btn" type="primary" size="small">支付</Button>
@@ -78,7 +84,8 @@ function OrderList({ ongoing, finished }) {
 
 function mapStateToProps(state) {
   const { ongoing, finished } = state.orders;
-  return { ongoing, finished };
+  const { openid, headimgurl, nickname } = state.wechatInfo;
+  return { ongoing, finished, openid, headimgurl, nickname };
 }
 
 export default connect(mapStateToProps)(OrderList);
