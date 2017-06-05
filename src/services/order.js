@@ -1,8 +1,9 @@
 import request from '../utils/request';
+import { HOST_URL } from '../utils/constants';
 
 export function fetchOrders({ id = 1 }) {
   // return request('https://open.weixin.qq.com/connect/oauth2/authorize?appid=wxf53ebc8656c7b6c2&redirect_uri=http%3a%2f%2fwxgzhpaytest.maxtropy.com%2forder%2fall&response_type=code&scope=snsapi_base&state=AUTH#wechat_redirect');
-  return request('http://wxgzhpaytest.maxtropy.com/order/pay?funcId=1');
+  return request(`${HOST_URL}/order/pay?funcId=1`);
 }
 
 

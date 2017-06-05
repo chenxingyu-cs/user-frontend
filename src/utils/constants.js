@@ -1,1 +1,1 @@
-export const HOST_URL = 'http://wxgzhpaytest.maxtropy.com';
+export const HOST_URL = 'http://wxgzhpaytest.maxtropy.com/api';

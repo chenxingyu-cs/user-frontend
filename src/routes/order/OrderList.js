@@ -13,7 +13,7 @@ const Brief = Item.Brief;
 
 const TabPane = Tabs.TabPane;
 
-function OrderList({ ongoing, finished }) {
+function OrderList({ ongoing, finished, openid, headimgurl }) {
 
   function callback(key) {
     console.log('onChange', key);
@@ -42,6 +42,8 @@ function OrderList({ ongoing, finished }) {
           <div>
             <h4>{ongoing[0].address} | {ongoing[0].machineName} | {ongoing[0].functionName} </h4>
             price: {ongoing[0].price}
+            openid: {openid}
+            img: {headimgurl}
           </div>
           </div>
         </TabPane>
@@ -66,7 +68,8 @@ function OrderList({ ongoing, finished }) {
 
 function mapStateToProps(state) {
   const { ongoing, finished } = state.orders;
-  return { ongoing, finished };
+  const { openid, headimgurl } = state.wechatInfo;
+  return { ongoing, finished, openid, headimgurl };
 }
 
 export default connect(mapStateToProps)(OrderList);
