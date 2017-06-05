@@ -1,10 +1,9 @@
 import React from 'react';
 import { connect } from 'dva';
 import styles from './OrderList.css';
-import { Tabs, WhiteSpace } from 'antd-mobile';
+import { Button, Flex, List, Tabs, WhiteSpace } from 'antd-mobile';
 import OngoingOrderListComponent from '../../components/order/OngoingOrderList'
 import FinishedOrderListComponent from '../../components/order/FinishedOrderList'
-import { List, Flex } from 'antd-mobile';
 
 import CountDownButton from '../../components/Common/CountDownButton'
 
@@ -32,17 +31,32 @@ function OrderList({ ongoing, finished }) {
   return (
     <div className={styles.normal}>
       <div className={styles.topBar}>
+        <div className={styles.avatarDiv}>
+          <img src="https://www.themarysue.com/wp-content/uploads/2015/12/avatar.jpeg" className={styles.avatarImg}/>
+        </div>
+        <div className={styles.nameDiv}>
+          <p> Hi, Wenhao.Yun </p>
+        </div>
+        <img src="http://www.freeiconspng.com/uploads/laundry-basket-icon-png-2.png" className={styles.backgroundImg}/>
       </div>
       <Tabs defaultActiveKey="1" onChange={callback} onTabClick={handleTabClick}>
         <TabPane tab="进行中" key="1">
-          <div style={{ backgroundColor: '#fff' }}>
           <div>
-            订单号: {ongoing[0].orderId}
-          </div>
-          <div>
-            <h4>{ongoing[0].address} | {ongoing[0].machineName} | {ongoing[0].functionName} </h4>
-            price: {ongoing[0].price}
-          </div>
+            <div className={styles.orderDetail}>
+              订单号: <p style={{fontWeight: 'bold', display: 'inline'}}>{ongoing[0].orderId}</p>
+            </div>
+            <div className={styles.orderDetail}>
+              <p style={{fontWeight: 'bold'}}>{ongoing[0].address} | {ongoing[0].machineName} | {ongoing[0].functionName} </p>
+              金额: {ongoing[0].price}
+              <Flex>
+                <Flex.Item>
+                  <Button className="btn" type="primary" size="small">支付</Button>
+                </Flex.Item>
+                <Flex.Item>
+                  <Button className="btn" type="ghost" size="small">取消</Button>
+                </Flex.Item>
+              </Flex>
+            </div>
           </div>
         </TabPane>
         <TabPane tab="已结束" key="2">
@@ -58,8 +72,6 @@ function OrderList({ ongoing, finished }) {
           </div>
         </TabPane>
       </Tabs>
-
-
     </div>
   );
 }

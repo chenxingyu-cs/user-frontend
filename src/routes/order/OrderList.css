@@ -3,6 +3,59 @@
 }
 
 .topBar {
-  background-color: #66CCFF;
-  height: 300px;
+  position: relative;
+  background-color: #108ee9;
+  width: 100%;
+  height: 200px;
+}
+
+.avatarDiv {
+  position: absolute;
+  left: 15%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 120px;
+  height: 120px;
+  padding: 2px;
+  background-color: #ececec;
+  border: 2px;
+  border-radius: 50%;
+}
+
+.avatarImg {
+  display: inline-block;
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+}
+
+.nameDiv {
+  position: absolute;
+  left: 2%;
+  top: 10%;
+  width: 80%;
+  text-align: center;
+}
+
+.nameDiv p {
+  font-weight: bold;
+  color: #fff;
+}
+
+.backgroundImg {
+  position: absolute;
+  bottom: 8px;
+  right: 16px;
+  width: 20%;
+  height: auto;
+  opacity: 0.3;
+}
+
+.orderDetail {
+  border-bottom: solid #ececec;
+  padding: 2px;
+}
+
+.orderDetail p {
+  margin: 0px;
 }
