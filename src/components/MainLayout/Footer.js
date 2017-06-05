@@ -1,52 +1,5 @@
-// import { TabBar, Icon } from 'antd-mobile';
-// import React from 'react';
-//
-// function Footer() {
-//
-//   function renderContent(id) {
-//     console.log(id);
-//     if (id == 0) {
-//       window.location = '/#/laundryStation/1';
-//     } else {
-//       window.location = '/#/laundryMachine/1';
-//     }
-//   }
-//
-//   return (
-//     <TabBar
-//         unselectedTintColor="#949494"
-//         tintColor="#33A3F4"
-//         barTintColor="white"
-//         hidden={false}
-//       >
-//       <TabBar.Item
-//           title="洗衣"
-//           key="生活"
-//           icon={{ uri: 'https://zos.alipayobjects.com/rmsportal/sifuoDUQdAFKAVcFGROC.svg' }}
-//           selectedIcon={{ uri: 'https://zos.alipayobjects.com/rmsportal/iSrlOTqrKddqbOmlvUfq.svg' }}
-//           selected={true}
-//           badge={1}
-//           onPress={() => {renderContent(0);}}
-//           data-seed="logId"
-//         >
-//         </TabBar.Item>
-//         <TabBar.Item
-//           icon={{ uri: 'https://zos.alipayobjects.com/rmsportal/asJMfBrNqpMMlVpeInPQ.svg' }}
-//           selectedIcon={{ uri: 'https://zos.alipayobjects.com/rmsportal/gjpzzcrPMkhfEqgbYvmN.svg' }}
-//           title="我的"
-//           key="我的"
-//           selected={false}
-//           onPress={() => {renderContent(1);}}
-//         >
-//         </TabBar.Item>
-//     </TabBar>
-//   );
-//
-// }
-//
-// export default Footer;
-//
 import { TabBar, Icon } from 'antd-mobile';
+import { browserHistory } from 'dva/router'
 
 /* eslint global-require: 0 */
 
@@ -95,7 +48,8 @@ class Footer extends React.Component {
             // this.setState({
             //   selectedTab: 'blueTab',
             // });
-            window.location = '/laundry/list';
+            // window.location = '/laundry/list';
+            browserHistory.push('/laundry/list');
           }}
           data-seed="logId"
         >
@@ -110,7 +64,8 @@ class Footer extends React.Component {
             // this.setState({
             //   selectedTab: 'redTab',
             // });
-            window.location = '/laundry/station/10';
+            // window.location = '/laundry/station/10';
+            browserHistory.push('/laundry/station/10');
           }}
           data-seed="logId1"
         >
@@ -125,7 +80,8 @@ class Footer extends React.Component {
             // this.setState({
             //   selectedTab: 'greenTab',
             // });
-            window.location = '/order/list';
+            // window.location = '/order/list';
+            browserHistory.push('/order/list');
           }}
         >
         </TabBar.Item>
@@ -139,7 +95,8 @@ class Footer extends React.Component {
             // this.setState({
             //   selectedTab: 'yellowTab',
             // });
-            window.location = '/user/signin';
+            // window.location = '/user/signin';
+            browserHistory.push('/user/signin');
           }}
         >
         </TabBar.Item>
