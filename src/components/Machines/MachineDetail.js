@@ -29,7 +29,7 @@ function MachineDetail({ dispatch, id, description, imageSrc, modelName, status,
     window.location = `http://wxgzhpaytest.maxtropy.com/api/order/pay?funcId=${functionId}&openid=${openid}`;
   }
 
-  function submitRequest() {
+  function submitRequest2() {
     const functionId = functions[currentFunctionIndex].id;
     console.log(functionId)
     // console.log(WeixinJSBridge)
