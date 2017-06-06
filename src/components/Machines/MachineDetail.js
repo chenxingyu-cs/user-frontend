@@ -1,5 +1,6 @@
 import React from 'react';
 import { connect } from 'dva';
+import { browserHistory } from 'dva/router'
 import { Grid, Flex, WhiteSpace, Button } from 'antd-mobile';
 import styles from './MachineDetail.css';
 import MachineIntroductionCard from './MachineIntroductionCard';
@@ -26,6 +27,20 @@ function MachineDetail({ dispatch, id, description, imageSrc, modelName, status,
     //   },
     // });
     window.location = `http://wxgzhpaytest.maxtropy.com/api/order/pay?funcId=${functionId}&openid=${openid}`;
+  }
+
+  function submitRequest() {
+    const functionId = functions[currentFunctionIndex].id;
+    console.log(functionId)
+    // console.log(WeixinJSBridge)
+    // dispatch({
+    //   type: 'machineDetail/sendFunctionControlRequest',
+    //   payload: {
+    //     functionId,
+    //     openid,
+    //   },
+    // });
+    browserHistory.push(`http://wxgzhpaytest.maxtropy.com/api/order/pay?funcId=${functionId}&openid=${openid}`);
   }
 
   console.log(functions[0]);
@@ -63,6 +78,7 @@ function MachineDetail({ dispatch, id, description, imageSrc, modelName, status,
       <WhiteSpace />
       <Flex justify="center">
         <Button type="primary" inline style={{ marginRight: '0.1rem' }} onClick={e => submitRequest()}>确认</Button>
+        <Button type="primary" inline style={{ marginRight: '0.1rem' }} onClick={e => submitRequest2()}>确认测试</Button>
       </Flex>
     </div>
   );
