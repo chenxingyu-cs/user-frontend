@@ -41,17 +41,18 @@ function OrderList({ ongoing, finished, openid, headimgurl, nickname }) {
       </div>
       <Tabs defaultActiveKey="1" onChange={callback} onTabClick={handleTabClick}>
         <TabPane tab="进行中" key="1">
+        {ongoing.map(order =>
           <div>
             <div className={styles.orderDetail}>
-              订单号: <p style={{fontWeight: 'bold', display: 'inline'}}>{ongoing[0].orderId}</p>
+              订单号: <p style={{fontWeight: 'bold', display: 'inline'}}>{order.orderId}</p>
             </div>
             <div className={styles.orderDetail}>
               <p style={{fontWeight: 'bold'}}>
-                {ongoing[0].address}
-                {ongoing[0].machineName}
-                {ongoing[0].functionName}
+                {order.address}
+                {order.machineName}
+                {order.functionName}
               </p>
-              金额: {ongoing[0].price}元
+              金额: {order.price}元
               <Flex>
                 <Flex.Item>
                   <Button className="btn" type="primary" size="small">支付</Button>
@@ -61,7 +62,10 @@ function OrderList({ ongoing, finished, openid, headimgurl, nickname }) {
                 </Flex.Item>
               </Flex>
             </div>
+            <WhiteSpace />
+            <WhiteSpace />
           </div>
+        )}
         </TabPane>
         <TabPane tab="已结束" key="2">
           <div style={{ backgroundColor: '#fff'}}>
