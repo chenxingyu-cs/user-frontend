@@ -52,9 +52,6 @@ function OrderList({ ongoing, finished, openid, headimgurl, nickname }) {
               订单号: <p style={{fontWeight: 'bold', display: 'inline'}}>{order.orderId}</p>
             </div>
             <div className={styles.orderDetail}>
-              <p>
-                {getDateString(order.createdTimestamp)}
-              </p>
               <p style={{fontWeight: 'bold'}}>
                 {order.address}
                 {order.machineName}
