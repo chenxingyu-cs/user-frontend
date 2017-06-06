@@ -32,7 +32,9 @@ export default {
         console.log('pathname', pathname);
 
         if (pathname === '/laundry/list') {
-          dispatch({ type: 'fetch', payload: {code: query.code} });
+          if (query.code) {
+            dispatch({ type: 'fetch', payload: {code: query.code} });
+          }
         }
       });
     },
