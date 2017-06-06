@@ -7,30 +7,41 @@ import styles from './LaundryStationCard.css';
 const Item = List.Item;
 const Brief = Item.Brief;
 
-const aaa = (
-  <span> FFFFFF </span>
-);
 
 function LaundryStationCard(machine) {
+
+  const { id, description, status, functions } = machine.machine;
+
+  let statusStyle = styles.normalStatus;
+
+  if (status === '故障') {
+    statusStyle = styles.brokenStatus;
+  } else if (status === '掉线') {
+    statusStyle = styles.offlineStatus;
+  } else if (status === '预约') {
+    statusStyle = styles.orderedStatus;
+  }
 
   function handleClick(id) {
     browserHistory.push(`/laundry/machine/${id}`);
   }
 
-  const { id, description, status, functions } = machine.machine;
-  const firstFunction = functions.length == 0 ? '' : `${functions[0].time}分钟  ${functions[0].price}元`;
+  const firstFunction = functions.length == 0 ? '' : `${functions[0].name} ${functions[0].time}分钟  ${functions[0].price}元`;
   return (
     <div className={styles.normal}>
       <Item
         key={id}
         wrap="true"
-        extra={status}
+        extra={
+          <span className={statusStyle}>
+            {status}
+          </span>
+        }
         align="top"
-        thumb="https://zos.alipayobjects.com/rmsportal/dNuvNrtqUztHCwM.png"
         multipleLine
         onClick={() => { handleClick(id); }}>
         {description}
-        <Brief wrap="true">标准洗 {firstFunction}</Brief>
+        <Brief wrap="true">{firstFunction}</Brief>
       </Item>
     </div>
   );

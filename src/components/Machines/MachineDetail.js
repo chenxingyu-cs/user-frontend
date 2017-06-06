@@ -35,9 +35,7 @@ function MachineDetail({ dispatch, id, description, imageSrc, modelName, status,
     <div className={styles.normal}>
 
       <MachineIntroductionCard imageSrc={imageSrc} description={description} />
-      <div className={styles.currentFunctionIndex}>
-        {functions[currentFunctionIndex].description}
-      </div>
+
       <Grid
         data={functions}
         className={styles.machineFunctionDiv}
@@ -54,6 +52,12 @@ function MachineDetail({ dispatch, id, description, imageSrc, modelName, status,
         )}
       />
 
+      <WhiteSpace />
+      <WhiteSpace />
+      <WhiteSpace />
+      <div className={styles.currentFunctionIndex}>
+        {functions[currentFunctionIndex].description}
+      </div>
       <WhiteSpace />
       <WhiteSpace />
       <WhiteSpace />
