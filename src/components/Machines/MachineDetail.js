@@ -78,7 +78,6 @@ function MachineDetail({ dispatch, id, description, imageSrc, modelName, status,
       <WhiteSpace />
       <Flex justify="center">
         <Button type="primary" inline style={{ marginRight: '0.1rem' }} onClick={e => submitRequest()}>确认</Button>
-        <Button type="primary" inline style={{ marginRight: '0.1rem' }} onClick={e => submitRequest2()}>确认测试</Button>
       </Flex>
     </div>
   );

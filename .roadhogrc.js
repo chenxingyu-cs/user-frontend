@@ -9,7 +9,7 @@ export default {
   entry: 'src/index.js',
   extraBabelPlugins: [
     'transform-runtime',
-    ['import', { libraryName: 'antd-mobile', style: 'css' }],
+    ['import', { libraryName: 'antd-mobile', style: true }],
   ],
   env: {
     development: {
@@ -38,8 +38,12 @@ export default {
       propWhiteList: [],
     }),
   ],
-  "theme": {
-    "@brand-primary": "#66CCFF",
+  theme: {
+    "@brand-primary": "#f45675",
+    "@primary-color": "#f45675",
+    "@link-color": "#f45675",
+    "@border-radius-base": "2px",
+    "@font-size-base": "50px",
+    "@line-height-base": "1.2"
   }
-  //...
 }
