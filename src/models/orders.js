@@ -6,6 +6,7 @@ export default {
   state: {
     ongoing: [
       {
+        openid: '',
         address: '',
         createdTimestamp: '',
         finishTimestamp: '',
@@ -19,6 +20,7 @@ export default {
     ],
     finished: [
       {
+        openid: '',
         address: '',
         createdTimestamp: '',
         finishTimestamp: '',
@@ -51,6 +53,10 @@ export default {
       console.log('order data', data);
       yield put({ type: 'save', payload: { data } });
     },
+    *fetchAll({ payload: { code } }, { call, put }) {
+      const { data } = yield call(orderService.fetchOrdersByCode, { code });
+      yield put({ type: 'save', payload: { data } });
+    },
   },
   subscriptions: {
     setup({ dispatch, history }) {
@@ -58,6 +64,12 @@ export default {
         if (pathname === '/order/list') {
           dispatch({ type: 'fetch', payload: {id: 1} });
           // dispatch({ type: 'querySuccess', payload: query });
+        }
+        if (pathname === '/issueReport') {
+          dispatch({ type: 'querySuccess', payload: query });
+          // if (query.code) {
+          //   dispatch({ type: 'fetchAll', payload: {code: query.code} });
+          // }
         }
       });
     },

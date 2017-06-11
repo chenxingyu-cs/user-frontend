@@ -24,11 +24,13 @@ import OrderList from "./routes/order/OrderList.js";
 
 import OrderMenu from "./routes/order/OrderMenu.js";
 
-import OrderSearch from "./routes/order/OrderSearch.js";
+import OrderSearch from "./routes/order/OrderQuery.js";
 
 import OrderDetail from "./routes/order/OrderDetail.js";
 
 import WechatEntrance from "./routes/WechatEntrance.js";
+
+import IssueReport from "./routes/IssueReport.js";
 
 function RouterConfig({ history }) {
   return (
@@ -54,6 +56,7 @@ function RouterConfig({ history }) {
         <Route path="detail" component={OrderDetail} />
       </Route>
       <Route path="/wechatEntrance" component={WechatEntrance} />
+      <Route path="/IssueReport" component={IssueReport} />
     </Router>
   );
 }

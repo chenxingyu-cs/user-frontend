@@ -42,7 +42,7 @@ function OrderList({ ongoing, finished, openid, headimgurl, nickname }) {
         <div className={styles.nameDiv}>
           <p> Hi, {nickname} </p>
         </div>
-        <img src="http://www.freeiconspng.com/uploads/laundry-basket-icon-png-2.png" className={styles.backgroundImg}/>
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTqJnWdT8MGUqaZugF7WUE9SFcMpxcO1o55Rwg_6uifMDOplKlFlQ" className={styles.backgroundImg}/>
       </div>
       <Tabs defaultActiveKey="1" onChange={callback} onTabClick={handleTabClick}>
         <TabPane tab="进行中" key="1">
@@ -52,11 +52,9 @@ function OrderList({ ongoing, finished, openid, headimgurl, nickname }) {
               订单号: <p style={{fontWeight: 'bold', display: 'inline'}}>{order.orderId}</p>
             </div>
             <div className={styles.orderDetail}>
-              <p style={{fontWeight: 'bold'}}>
-                {order.address}
-                {order.machineName}
-                {order.functionName}
-              </p>
+              <p style={{fontWeight: 'bold'}}> {order.address} </p>
+              <p style={{fontWeight: 'bold'}}> {order.machineName} </p>
+              <p style={{fontWeight: 'bold'}}> {order.functionName} </p>
               金额: {order.price}元
               <Flex>
                 <Flex.Item>

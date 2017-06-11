@@ -45,7 +45,12 @@ export default {
       }
     },
 
-
+    *report({ payload: { issueData, pics, openId }}, {call, put}) {
+      console.log(issueData.description);
+      console.log(issueData.refund);
+      console.log(pics);
+      console.log(openId);
+    },
   },
   subscriptions: {},
 };
