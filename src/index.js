@@ -15,6 +15,8 @@ app.model(require('./models/example'));
 
 app.model(require("./models/wechatInfo"));
 
+app.model(require("./models/wxconfig"));
+
 app.model(require("./models/orders"));
 
 app.model(require("./models/user"));
