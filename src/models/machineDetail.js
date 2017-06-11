@@ -54,7 +54,17 @@ export default {
       const { functionId, openid } = payload;
       console.log(functionId, openid);
       const {data} = yield call(machineService.sendFunctionControlRequest, payload);
-
+      console.log('pay info data', data);
+      wx.chooseWXPay({
+        timeStamp: data.timeStamp,
+        nonceStr: data.nonceStr,
+        package: data.prepayId,
+        signType: data.signType,
+        paySign: data.paySign,
+        success: function(res) {
+          alert(JSON.stringify(res));
+        }
+      });
     },
 
     *fetch({ payload: { id } }, { call, put }) {

@@ -17,30 +17,14 @@ function MachineDetail({ dispatch, id, description, imageSrc, modelName, status,
 
   function submitRequest() {
     const functionId = functions[currentFunctionIndex].id;
-    console.log(functionId)
-    // console.log(WeixinJSBridge)
-    // dispatch({
-    //   type: 'machineDetail/sendFunctionControlRequest',
-    //   payload: {
-    //     functionId,
-    //     openid,
-    //   },
-    // });
-    window.location = `http://wxgzhpaytest.maxtropy.com/api/order/pay?funcId=${functionId}&openid=${openid}`;
-  }
-
-  function submitRequest2() {
-    const functionId = functions[currentFunctionIndex].id;
-    console.log(functionId)
-    // console.log(WeixinJSBridge)
-    // dispatch({
-    //   type: 'machineDetail/sendFunctionControlRequest',
-    //   payload: {
-    //     functionId,
-    //     openid,
-    //   },
-    // });
-    browserHistory.push(`http://wxgzhpaytest.maxtropy.com/api/order/pay?funcId=${functionId}&openid=${openid}`);
+    dispatch({
+      type: 'machineDetail/sendFunctionControlRequest',
+      payload: {
+        functionId,
+        openid,
+      },
+    });
+    // window.location = `http://wxgzhpaytest.maxtropy.com/api/order/pay?funcId=${functionId}&openid=${openid}`;
   }
 
   console.log(functions[0]);
