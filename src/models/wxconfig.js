@@ -62,7 +62,7 @@ export default {
               'chooseWXPay'
             ],
             success: function (res) {
-              alert("without config: ", JSON.stringify(res));
+              alert("without config: " + JSON.stringify(res));
             }
           });
         }
