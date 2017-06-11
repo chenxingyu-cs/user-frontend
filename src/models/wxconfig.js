@@ -53,19 +53,18 @@ export default {
       return history.listen(({ pathname, query }) => {
         if (pathname === '/laundry/list') {
           dispatch({ type: 'wxconfigFetcher', payload: {url: location.href.split('#')[0]} });
-        } else {
-          wx.checkJsApi({
-            jsApiList: [
-              'openLocation',
-              'getLocation',
-              'scanQRCode',
-              'chooseWXPay'
-            ],
-            success: function (res) {
-              alert("without config: " + JSON.stringify(res));
-            }
-          });
         }
+        wx.checkJsApi({
+          jsApiList: [
+            'openLocation',
+            'getLocation',
+            'scanQRCode',
+            'chooseWXPay'
+          ],
+          success: function (res) {
+            console.log(pathname + " : " + JSON.stringify(res));
+          }
+        });
       });
     },
   },
