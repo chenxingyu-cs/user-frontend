@@ -34,15 +34,6 @@ export default {
       wx.config(wechatState);
       wx.ready(() => {
         console.log('ready');
-        wx.checkJsApi({
-          jsApiList: [
-            'scanQRCode',
-            'chooseWXPay'
-          ],
-          success: function (res) {
-            alert(JSON.stringify(res));
-          }
-        });
       });
       wx.error((err) => {
         console.error(JSON.stringify(err))
@@ -60,7 +51,21 @@ export default {
   subscriptions: {
     setup({ dispatch, history }) {
       return history.listen(({ pathname, query }) => {
-        dispatch({ type: 'wxconfigFetcher', payload: {url: location.href.split('#')[0]} });
+        if (pathname === '/laundry/list') {
+          dispatch({ type: 'wxconfigFetcher', payload: {url: location.href.split('#')[0]} });
+        } else {
+          wx.checkJsApi({
+            jsApiList: [
+              'openLocation',
+              'getLocation',
+              'scanQRCode',
+              'chooseWXPay'
+            ],
+            success: function (res) {
+              alert("without config: ", JSON.stringify(res));
+            }
+          });
+        }
       });
     },
   },
