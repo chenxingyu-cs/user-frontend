@@ -34,7 +34,15 @@ export default {
       wx.config(wechatState);
       wx.ready(() => {
         console.log('ready');
-        wx.scanQRCode();
+        wx.checkJsApi({
+          jsApiList: [
+            'scanQRCode',
+            'chooseWXPay'
+          ],
+          success: function (res) {
+            alert(JSON.stringify(res));
+          }
+        });
       });
       wx.error((err) => {
         console.error(JSON.stringify(err))
@@ -44,6 +52,7 @@ export default {
   },
   effects: {
     *wxconfigFetcher({ payload: { url } }, { call, put }) {
+      console.log('url: ', url);
       const { data } = yield call(wechatService.fetchConfig, { url });
       yield put({ type: 'wxconfig', payload: { data } });
     }
